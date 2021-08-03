@@ -1,0 +1,41 @@
+# CaveToMap v2.50
+name EXPERT1_
+width 40
+height 22
+mapstart
+WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW
+WQQQQQwwwwwwwwwwwwwwrww      Q wwwwwwwwW
+WQ   Qw             .   wwwwww wdddddddW
+WQ   Qwwwx.wwwwww.ww ww w rrrw wx.wwwwwW
+WQ   Qw       cwdddw ww w ...w .       W
+WQ   Qwwww.xwwwwddQw ww w mmmw w.w.w.w.W
+WQ   QwFF  WWwPwwwww ww w    w w.w.x.w.W
+WQ   QwWW  FFw wdddw ww w.wwww w.w.w.w.W
+WQ   QwFF  WWw wdddw ww w    w w.w.w.x.W
+WQ   QwWW    . wdddwQww w    w w.w.w.w.W
+WQ   Qwwwwwwwwwwwwwwwww        wdwdwdwdW
+WQ   QW...............w.wwwwwwwwwwwwwwwW
+WQ   Qw.x.x.x.w.x.W.w..                W
+WQ   QW.w.w.W.W.W.w.x.W.x.x.x.x.w.w.x.wW
+WQ   QW.W.W.W.W.w.w.w.W.W.w.W.W.w.W.w.wW
+WQ   QW.w.W.w.W.W.Wdw.w.W.W.W.W.W.w.W.wW
+WQ   Qw.W.w.w.w.W.WWw.w.w.W.W.w.w.W.W.wW
+WQ   Qw.W.w.W.w.W..WW.W.w.W.w.W.W.W.w.wW
+WQ   QW.W.W.W.W..w.Ww.W.W.w.W.W.W.W.W.wW
+WQ   QW.W.W.w.WW.wWww.W.W.W.w.W.w.w.W.wW
+WQQQQQw.w.w.W..Hw.....wdwdWdWdwdWdwdWdwW
+WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW
+mapend
+delay 25
+time 255
+require 18
+dpoints 1
+dextra 12
+permeable 9
+amrate1 1
+milltime 255
+colour1 0
+colour2 0
+colour3 8
+colour4 9
+colour5 3

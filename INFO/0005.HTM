@@ -1,0 +1,79 @@
+<HTML>
+<HEAD><TITLE>BDCFF Object 0005: Expanding wall</TITLE></HEAD>
+<BODY>
+<H1>BDCFF Object 0005: Expanding wall</H1>
+<STRONG>Object number:</STRONG> $0005<BR>
+<STRONG>Game class:</STRONG> Boulder Dash (by Peter Liepa)<BR>
+<STRONG>Object name:</STRONG> Expanding wall<P>
+
+In this document:
+<UL>
+    <LI><A HREF="#Properties">Properties</A>
+    <LI><A HREF="#Attributes">Attributes</A>
+    <LI><A HREF="#Graphics">Graphics</A>
+    <LI><A HREF="#Specification">Specification</A>
+    <LI><A HREF="#General Algorithm">General Algorithm</A>
+</UL>
+
+<HR>
+<H2><A HREF="properties.html" NAME="Properties">Properties</A></H2>
+<STRONG>Animate:</STRONG> yes<BR>
+<STRONG>Impact explosive:</STRONG> no<BR>
+<STRONG>Chain explosion action:</STRONG> consumed<BR>
+<STRONG>Explosion type:</STRONG> n/a<BR>
+<STRONG>Rounded:</STRONG> no<P>
+
+
+<HR>
+<H2><A NAME="Attributes">Attributes</A></H2>
+Attribute format: %00000000 00000000<P>
+
+There are no attributes for this object type.
+
+
+<HR>
+<H2><A NAME="Graphics">Graphics</A></H2>
+<IMG width=16 height=16 SRC="0003.gif" ALT="Brick wall graphic"><BR>
+Expanding wall looks identical to <A HREF="0003.html">brick wall</A>.
+
+
+<HR>
+<H2><A NAME="Specification">Specification</A></H2>
+Expanding wall looks identical to brick wall, but is not <STRONG>rounded</STRONG>; things don't
+roll off it.<P>
+
+Expanding wall "grows" sideways whenever possible. If ever a piece of expanding wall discovers
+that the position to the immediate left or right is empty space, it grows to fill that space. A
+piece of expanding wall can expand to fill both the left and the right spaces in one frame.
+However, the newly created pieces of expanding wall don't get to themselves grow until the next
+frame, so if you put a piece of expanding wall into a cave of space, you will see it expanding
+left and right at the rate of one space per frame.<P>
+
+Each time expanding wall grows, an appropriate sound is made (failing all else, just the standard
+boulder crash sound, the same as is used when a boulder starts or stops falling, or is pushed).
+
+
+<HR>
+<H2><A NAME="General Algorithm">General Algorithm</A></H2>
+<PRE>procedure ScanExpandingWall(<STRONG>in</STRONG> positionType wallPosition) 
+# Local variables
+    positionType NewPosition;
+
+# Try to grow left
+    NewPosition := GetRelativePosition(wallPosition, left1);
+    if (GetObjectAtPosition(NewPosition) == objSpace) then
+        PlaceObject(objExpandingWall, attribNone, NewPosition);
+    endif
+
+# Try to grow right
+    NewPosition := GetRelativePosition(wallPosition, right1);
+    if (GetObjectAtPosition(NewPosition) == objSpace) then
+        PlaceObject(objExpandingWall, attribNone, NewPosition);
+    endif
+endprocedure</PRE>
+
+
+<HR>
+<ADDRESS>Web page design by <A HREF="mailto:peterb@perth.dialix.oz.au">Peter Broadribb</A></ADDRESS>
+</BODY>
+</HTML>

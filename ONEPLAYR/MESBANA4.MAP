@@ -1,0 +1,45 @@
+# Boulderoid v1.15
+author David J och Tobias...?
+name MESBANA4
+width 40
+height 22
+mapstart
+WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW
+W.r.  ....P.....  ..  .....r......  .. W
+W .   .r........   .     ........      W
+W ..  ....... .. r .... ...  r         W
+W  ..  .....   ...  .   ... ..... ..   W
+W.     ...        . . .r... .   .  ..  W
+X. . . .....    . .   ....    .  .    .W
+W.   ....r....  ..  ..   ...  .  . .   W
+W  ....c.....   .    .   ..   ..     . W
+W  ....ccccccc.   .. .. ..    .....    W
+W  ....c..cc.c...  ...   ...   .    ...W
+W   .cccccc.. . . .....    .. ... .   .W
+W...  ..    ...      .  ..     .r ..  .W
+W......     ... . ..    ..  . ...    ..W
+W.....   .   .. .    ..     .  .. .....W
+W...   .....  ...    .      ..    .....W
+W  ... .   .   .. . .. ...  .r.  ......W
+W        .              ......  .......W
+W.   . ...    .... ..    .   .  .......W
+W..... ..  ....... ..      ............W
+W.....     .............r.............aW
+WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW
+mapend
+delay 25
+time 110
+require 99
+dpoints 5
+dextra 30
+permeable 5
+amrate1 1
+amoeba 23
+milltime 255
+colour1 10
+colour2 0
+colour3 2
+colour4 10
+colour5 3
+timepercent 100
+teleport 1234567890,YYYYYYYYYY,NNNNNNNNNN

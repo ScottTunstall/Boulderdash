@@ -1,0 +1,66 @@
+<HTML>
+<HEAD><TITLE>C64 BoulderDash Construction Kit File Format</TITLE></HEAD>
+<BODY><H1>C64 BoulderDash Construction Kit File Format</H1>
+There was a BoulderDash Construction Kit written for the Commodore 64. I never saw an official version, only a hacked, pre-release version, so it's possible that the information given below may not be accurate for the official BoulderDash Construction Kit.<P>
+
+<H2>Format of a C64 BoulderDash Construction Kit file</H2>
+<PRE>Offset  Bytes  Range  Description 
+------  -----  -----  ----------- 
+0000    0002          unknown 
+0002    01B8   00-0F  880 nybbles of cave description (see below) 
+01BA    0001   00-14  Cave delay (00 = fast, $14 = slow) 
+01BB    0001          unused 
+01BC    0001   00-FF  Cave time in "seconds" 
+01BD    0001          unused 
+01BE    0001   00-63  Diamonds needed 
+01BF    0001          unused 
+01C0    0001   00-63  Diamond value 
+01C1    0001          unused 
+01C2    0001   00-63  Bonus diamond value 
+01C3    0001          unused 
+01C4    0001   00-08  Slime permeability 
+01C5    0001          unused 
+01C6    0001   00-FF  Amoeba life time 
+01C7    0001          unused 
+01C8    0001   00-FF  Magic wall milling time 
+01C9    0001          unused 
+01CA    0012          unknown 
+01DC    0002   00-0F  Colour 1 
+01DE    0002   00-0F  Colour 2 
+01E0    0002   00-0F  Colour 3 
+01E2    0002   00-0F  Colour 4 
+01E4    0002   00-07  Colour 5 
+01E6    000C          unknown<P></PRE>
+
+<H2>Nybble Codes</H2>
+0 Boulder<BR>
+1 Diamond<BR>
+2 Magic wall<BR>
+3 Brick wall<BR>
+4 Steel wall<BR>
+5 Expanding wall<BR>
+6 Rockford<BR>
+7 Dirt<BR>
+8 Firefly<BR>
+9 Butterfly<BR>
+A Amoeba<BR>
+B Slime<BR>
+C Hidden out<BR>
+D Visible out<BR>
+E In<BR>
+F Space<P>
+
+<H2>Pallette Tools</H2>
+Random generator<BR>
+Line tool<BR>
+(C) Colour selection dialog<BR>
+(T) Test cave<BR>
+(M) Filing operations dialog (load, save, directory etc)<BR>
+(N) New cave/intermission<BR>
+(P) Pallette on/off<BR>
+(V) Timers
+
+<HR>
+<ADDRESS>Web page design by <A HREF="mailto:peterb@perth.dialix.oz.au">Peter Broadribb</A></ADDRESS>
+</BODY>
+</HTML>

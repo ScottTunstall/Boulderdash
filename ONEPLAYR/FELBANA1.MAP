@@ -1,0 +1,41 @@
+# CaveToMap v2.50
+name FELBANA1
+width 40
+height 22
+mapstart
+mrmrmrmrmrmrmrmrmrmrmrmrmrmrmrmrmrmrmrmr
+mrmrmrmrmrmrmrmrmrmrmrmrmrmrmrmrmrmrmrmr
+mrmrmrmrmrmrmrmrmrmrmrmrmrmrmrmrmrmrmrmr
+mrmrmrmrmrmrmrmrmrmrmrmrmrmrmrmrmrmrmrmr
+mrmrmrmrmrmrmrmrmrmrmrmrmrmrmrmrmrmrmrmr
+mrmrmrmrmrmrmrarw    c. www wwww    w  W
+W     wddddddwcw     cw  cw    . FFWWw W
+W     wddddddw wwwwwwww w.xwwwwx.wwwww W
+W     wddddddw  c       w      w     w W
+W     wddddddw wwwwwwww w w wwww  FXw  W
+W     wddddddw          w   w  wwwww   W
+W      wwwwwwwwwwww.wwwwwwwww          W
+W         wwww         wwww            W
+W         wwww         wwww            W
+W          wwww         wwww           W
+W          wwww         wwww           W
+W          wwww         wwww       ....W
+W          wwww         wwww      .wwwwW
+W         wwww         wwww       w    W
+W          ww      P    ww          FWFW
+W........wwwwww.......wwwwww......wwwwwW
+rdrrsP rs xwxWWdxmx.WdxmxwmPWwWdxFmrmrmr
+mapend
+delay 25
+time 255
+require 30
+dpoints 1
+dextra 99
+permeable 9
+amrate1 1
+milltime 999
+colour1 0
+colour2 0
+colour3 8
+colour4 9
+colour5 3

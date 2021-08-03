@@ -1,0 +1,41 @@
+# CaveToMap v2.50
+name PHILIP_C
+width 40
+height 22
+mapstart
+WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW
+Wwwwwwwwwwwww      aawwww.....wccccccc.W
+Wwwwwwwwwwwww wwww..awwww.....wccccccc.W
+W  aa c cc  a www ..awwww.....wccccccc.W
+W wwwwwwwwwww wwww..arwww.....wQQQQQQQ.W
+W ww   awwwww       wwwww..P..wQQQQQQQ.W
+W    w wwwwwwww   wwwwwww..W..wQQQQQQQ.W
+Wwwwww wwwww       a     .....ww wwww .W
+Ww     wwww  wwwww www  w.....   QaQ. .W
+Ww wwwwwwwwaawwcXwawwww w..... ...Q.. .W
+Ww      aa      w  wwww ww.... ...... .W
+Wwwwwwwwwww  w  w wwwwrrww.... wwww.. .W
+W.......wcccccw w wwrww ww.... wQw .. .W
+Wwwwwww.wcccccw   wwwww ww.... wcw .. .W
+Waaaaawwwcccccwwwwwwwww ww.... wQ  .. wW
+Waaaaaawwwwwwwwwwwwwwww ww...  www .. .W
+Waaaaaawwwwwww rrrr ww  ww........... .W
+WaaaaaawWQ QQQ         www........... .W
+WaaaaaaQ  wwwwwwwwwwQwwwww........... .W
+WaaaaaawQ  wQQ                        .W
+Waaaaaawwwwwwwwwwww wwwwww...w w.......W
+WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW
+mapend
+delay 35
+time 255
+require 20
+dpoints 1
+dextra 99
+permeable 1
+amrate1 54
+milltime 999
+colour1 0
+colour2 0
+colour3 8
+colour4 9
+colour5 3

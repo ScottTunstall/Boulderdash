@@ -1,0 +1,1173 @@
+<HTML>
+<HEAD><TITLE>BoulderDash Decoded cave data</TITLE>
+</HEAD>
+
+<BODY>
+<H1>BoulderDash Decoded cave data</H1>
+
+<UL>
+	<LI>Cave <A HREF="#Cave A">A</A> <A HREF="#Cave B">B</A> <A HREF="#Cave C">C</A> <A HREF="#Cave D">D</A> <A HREF="#Intermission 1">Intermission 1</A>
+	<LI>Cave <A HREF="#Cave E">E</A> <A HREF="#Cave F">F</A> <A HREF="#Cave G">G</A> <A HREF="#Cave H">H</A> <A HREF="#Intermission 2">Intermission 2</A>
+	<LI>Cave <A HREF="#Cave I">I</A> <A HREF="#Cave J">J</A> <A HREF="#Cave K">K</A> <A HREF="#Cave L">L</A> <A HREF="#Intermission 3">Intermission 3</A>
+	<LI>Cave <A HREF="#Cave M">M</A> <A HREF="#Cave N">N</A> <A HREF="#Cave O">O</A> <A HREF="#Cave P">P</A> <A HREF="#Intermission 4">Intermission 4</A>
+</UL>
+
+Decoded cave data in human-readable text, including ascii representation. Warning: There may be mistakes in the decode. The C source code to generate the following decodes are available in the files <A HREF="decodecaves.c">decodecaves.c</A> and <A HREF="cavedata.h">cavedata.h</A>). Note that when decoding the cave, the random objects are placed first, then a bounding rectangle of steel wall is put in (effectively an implicit DrawRect(0,2,40,22) before the cave data), then the cave data is decoded. For each cave, a graphical representation is given for difficulty level 1. The characters used in the graphical representation are the ones used by a implementation of BoulderDash on the Amiga.
+
+
+<H2>Cave 1 (<A NAME="Cave A">Cave A</A>: Intro)</H2>
+Pick up jewels and exit before time is up
+<PRE>01                  Cave 01
+14                  Magic wall/amoeba slow growth for: 20 seconds
+0A                  Diamonds worth: 10 points
+0F                  Extra diamonds worth: 15 points
+0A 0B 0C 0D 0E      Randomiser seed values for difficulty levels 1-5
+0C 0C 0C 0C 0C      Diamonds needed: 12, 12, 12, 12, 12 (for difficulty levels 1-5)
+96 6E 46 28 1E      Cave time: 150, 110, 70, 40, 30 seconds
+08                  Background color 1: Orange
+0B                  Background color 2: Gray 1
+09                  Foreground color: Brown
+D4 20               Unused
+00 10 14 00         Random objects:
+3C 32 09 00             zSpace :  60/256 = 23%
+                        zBouS  :  50/256 = 19%
+                        zDiaS  :   9/256 =  3%
+                        fourth code unused (0%)
+Cave layout:
+42 01 09 1E 02      Line of zBrick from ( 1, 9); length = 30; direction = right
+42 09 10 1E 02      Line of zBrick from ( 9,16); length = 30; direction = right
+25 03 04            StoreChar zPRFd1 at ( 3, 4)
+04 26 12            StoreChar zPreOut at (38,18)
+FF                  End of cave data.
+
+Map #1
+002 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW
+003 W...... ..d.r .....r.r....... ....r....W
+004 W.rXr...... .........rd..r.... ..... ..W
+005 W.......... ..r.....r.r..r........r....W
+006 Wr.rr.........r......r..r....r...r.....W
+007 Wr. r......... r..r........r......r.rr.W
+008 W... ..r........r.....r. r........r.rr.W
+009 Wwwwwwwwwwwwwwwwwwwwwwwwwwwwwww...r..r.W
+010 W. ...r..d. ..r.r..........d.rd...... .W
+011 W..d.....r..... ........rr r..r....r...W
+012 W...r..r.r..............r .r..r........W
+013 W.r.....r........rrr.......r.. .d....r.W
+014 W.d.. ..r.  .....r.rd..d....r...r..d. .W
+015 W. r..............r r..r........d.....rW
+016 W........wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwW
+017 W r.........r...d....r.....r...r.......W
+018 W r......... r..r........r......r.rr..PW
+019 W. ..r........r.....r.  ....d...r.rr...W
+020 W....rd..r........r......r.rd......r...W
+021 W... ..r. ..r.rr.........r.rd...... ..rW
+022 W.d.... ..... ......... .r..r....r...r.W
+023 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW</PRE>
+
+
+<H2>Cave 2 (<A NAME="Cave B">Cave B</A>: Rooms)</H2>
+Pick up jewels, but you must move boulders to get all jewels
+<PRE>02                  Cave 02
+14                  Magic wall/amoeba slow growth for: 20 seconds
+14                  Diamonds worth: 20 points
+32                  Extra diamonds worth: 50 points
+03 00 01 57 58      Randomiser seed values for difficulty levels 1-5
+0A 0C 09 0D 0A      Diamonds needed: 10, 12, 9, 13, 10 (for difficulty levels 1-5)
+96 6E 46 46 46      Cave time: 150, 110, 70, 70, 70 seconds
+0A                  Background color 1: Light red
+04                  Background color 2: Purple
+09                  Foreground color: Brown
+00 00               Unused
+00 10 14 08         Random objects:
+3C 32 09 02             zSpace :  60/256 = 23%
+                        zBouS  :  50/256 = 19%
+                        zDiaS  :   9/256 =  3%
+                        zFFly1 :   2/256 =  0%
+Cave layout:
+42 01 08 26 02      Line of zBrick from ( 1, 8); length = 38; direction = right
+42 01 0F 26 02      Line of zBrick from ( 1,15); length = 38; direction = right
+42 08 03 14 04      Line of zBrick from ( 8, 3); length = 20; direction = down
+42 10 03 14 04      Line of zBrick from (16, 3); length = 20; direction = down
+42 18 03 14 04      Line of zBrick from (24, 3); length = 20; direction = down
+42 20 03 14 04      Line of zBrick from (32, 3); length = 20; direction = down
+40 01 05 26 02      Line of zSpace from ( 1, 5); length = 38; direction = right
+40 01 0B 26 02      Line of zSpace from ( 1,11); length = 38; direction = right
+40 01 12 26 02      Line of zSpace from ( 1,18); length = 38; direction = right
+40 14 03 14 04      Line of zSpace from (20, 3); length = 20; direction = down
+25 12 15            StoreChar zPRFd1 at (18,21)
+04 12 16            StoreChar zPreOut at (18,22)
+FF                  End of cave data.
+
+Map #2
+002 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW
+003 W.r..r..w.r...d.w... .r.wr......w..rr..W
+004 W.......w......rwrr. ...w ..d...w....r.W
+005 W                                      W
+006 Wd......w.r....rw.r. .. w..r..d.w..r.r.W
+007 W.......w.r....rw.r. r..w.....r.w... ..W
+008 Wwwwwwwwwwwwwwwwwwww wwwwwwwwwwwwwwwwwwW
+009 W....rr.w..r....w... ..rw....r..w.....rW
+010 W.......w.. ....w... ...w....r. w.....rW
+011 W                                      W
+012 Wr..r...w....r..w..r ...w......dwr.....W
+013 Wr....r.w..r..r.w... . rw.......wr...r.W
+014 W.r.....w...r...w... . rw.......w r..r.W
+015 Wwwwwwwwwwwwwwwwwwww wwwwwwwwwwwwwwwwwwW
+016 Wr.  q..w....r.rw... ...w.rd..r.w......W
+017 W.....r.wr......w..d ...w ..r...w.r.rr.W
+018 W                                      W
+019 Wd.. .r.wr....r.w.r. ..rw.r.r...w......W
+020 W.....r.wr..d...w... r..w..r....w...rr W
+021 W.d... rw..r....w.Xd r..w. .....w...rr W
+022 W.r.... w.. ..r.w.P. ...w....r.rw.... .W
+023 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW</PRE>
+
+
+<H2>Cave 3 (<A NAME="Cave C">Cave C</A>: Maze)</H2>
+Pick up jewels. You must get every jewel to exit
+<PRE>03                  Cave 03
+00                  Magic wall/amoeba slow growth for: 0 seconds
+0F                  Diamonds worth: 15 points
+00                  Extra diamonds worth: 0 points
+00 32 36 34 37      Randomiser seed values for difficulty levels 1-5
+18 17 18 17 15      Diamonds needed: 24, 23, 24, 23, 21 (for difficulty levels 1-5)
+96 64 5A 50 46      Cave time: 150, 100, 90, 80, 70 seconds
+09                  Background color 1: Brown
+08                  Background color 2: Orange
+09                  Foreground color: Brown
+04 00               Unused
+02 10 14 00         Random objects:
+64 32 09 00             zBrick : 100/256 = 39%
+                        zBouS  :  50/256 = 19%
+                        zDiaS  :   9/256 =  3%
+                        fourth code unused (0%)
+Cave layout:
+25 03 04            StoreChar zPRFd1 at ( 3, 4)
+04 27 14            StoreChar zPreOut at (39,20)
+FF                  End of cave data.
+
+Map #3
+002 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW
+003 Wr.ww.wrr.w...rwr..r....w...r.....rw.d.W
+004 W..Xw.d.r.w...www..w.r....r..r.r...w.wrW
+005 W....w..rd..r....w.....r.wwr.......w.wwW
+006 Wd.w..wrwr..r....w...r......r.rr......wW
+007 Wr.w...w..r.ww..r.wwd.......r.rr......wW
+008 Wrr..r....w...r......r.rr......r..dww..W
+009 W..r.ww..r.rr...w....r.rr......w..r.w.rW
+010 W..w...d......d.r..wwr..r.w.wr..wr..d.rW
+011 Wr.r....w.ww..d.r..wwr..r..d.w...w..r.wW
+012 W.r.ww.....rrwr..d.w.wr..wr...wr..d.r..W
+013 Ww.ww......rrwr..r.w.ww...w..r.ww..r.wwW
+014 W.w.r.r.w...wwr..r....w...r.....ww.r.wwW
+015 W.w.r.r.w.d.w.wr..wr....r..r.rr....w...W
+016 Ww..wrwr..r....w...d...w.rw......w.ww.dW
+017 Ww...wwr..w.d...wr..r.r...r.wr......w..W
+018 Ww.d....r.ww..r.wwr.......r.wr......w..W
+019 W..r....w...r......r.rr......w..r.w...wW
+020 Wr.ww..r.ww...w....r.rr......w..rd..r..W
+021 Ww...r......r.rd......r...ww..wr..d.w..W
+022 Wrr...w.....r.rd......w..r.wd.d.rw.r...W
+023 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW</PRE>
+
+
+<H2>Cave 4 (<A NAME="Cave D">Cave D</A>: Butterflies)</H2>
+Drop boulders on butterflies to create jewels
+<PRE>04                  Cave 04
+14                  Magic wall/amoeba slow growth for: 20 seconds
+05                  Diamonds worth: 5 points
+14                  Extra diamonds worth: 20 points
+00 6E 70 73 77      Randomiser seed values for difficulty levels 1-5
+24 24 24 24 24      Diamonds needed: 36, 36, 36, 36, 36 (for difficulty levels 1-5)
+78 64 50 3C 32      Cave time: 120, 100, 80, 60, 50 seconds
+04                  Background color 1: Purple
+08                  Background color 2: Orange
+09                  Foreground color: Brown
+00 00               Unused
+10 00 00 00         Random objects:
+14 00 00 00             zBouS  :  20/256 =  7%
+                        second code unused (0%)
+                        third code unused (0%)
+                        fourth code unused (0%)
+Cave layout:
+25 01 03            StoreChar zPRFd1 at ( 1, 3)
+04 26 16            StoreChar zPreOut at (38,22)
+81 08 0A 04 04 00   FilledRect of zDirt from ( 8,10); length = 4; height = 4; fill = zSpace
+30 0A 0B            StoreChar zBFly1 at (10,11)
+81 10 0A 04 04 00   FilledRect of zDirt from (16,10); length = 4; height = 4; fill = zSpace
+30 12 0B            StoreChar zBFly1 at (18,11)
+81 18 0A 04 04 00   FilledRect of zDirt from (24,10); length = 4; height = 4; fill = zSpace
+30 1A 0B            StoreChar zBFly1 at (26,11)
+81 20 0A 04 04 00   FilledRect of zDirt from (32,10); length = 4; height = 4; fill = zSpace
+30 22 0B            StoreChar zBFly1 at (34,11)
+FF                  End of cave data.
+
+Map #4
+002 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW
+003 WX.....r....................r........r.W
+004 W.....r..............r.................W
+005 W........r..r..........................W
+006 Wr.....................................W
+007 W...................r..................W
+008 W.r.....................r.........r....W
+009 W..r.....r...........r..r.............rW
+010 W......r......r.....................r..W
+011 W.......  B ..r.  B ....  B ....  B ...W
+012 W.......    ..r.    ....    ....    r..W
+013 W......................................W
+014 W...r..............................r...W
+015 W...r.....r............................W
+016 W......r...........r..................rW
+017 W...........r.......r..................W
+018 W..r..............r....................W
+019 W.....................r.........r......W
+020 W................................r..r..W
+021 W....r......r.rr..................r....W
+022 W...........r.rr.........r..r.r.......PW
+023 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW</PRE>
+
+
+<H2>Cave 5 (<A NAME="Cave E">Cave E</A>: Guards)</H2>
+The jewels are there for grapping, but they are guarded by the deadly fireflies
+<PRE>05                  Cave 05
+14                  Magic wall/amoeba slow growth for: 20 seconds
+32                  Diamonds worth: 50 points
+5A                  Extra diamonds worth: 90 points
+00 00 00 00 00      Randomiser seed values for difficulty levels 1-5
+04 05 06 07 08      Diamonds needed: 4, 5, 6, 7, 8 (for difficulty levels 1-5)
+96 78 5A 3C 1E      Cave time: 150, 120, 90, 60, 30 seconds
+09                  Background color 1: Brown
+0A                  Background color 2: Light red
+09                  Foreground color: Brown
+00 00               Unused
+00 00 00 00         Random objects:
+00 00 00 00             first code unused (0%)
+                        second code unused (0%)
+                        third code unused (0%)
+                        fourth code unused (0%)
+Cave layout:
+25 01 03            StoreChar zPRFd1 at ( 1, 3)
+04 27 16            StoreChar zPreOut at (39,22)
+80 08 0A 03 03 00   FilledRect of zSpace from ( 8,10); length = 3; height = 3; fill = zSpace
+80 10 0A 03 03 00   FilledRect of zSpace from (16,10); length = 3; height = 3; fill = zSpace
+80 18 0A 03 03 00   FilledRect of zSpace from (24,10); length = 3; height = 3; fill = zSpace
+80 20 0A 03 03 00   FilledRect of zSpace from (32,10); length = 3; height = 3; fill = zSpace
+14 09 0C            StoreChar zDiaS at ( 9,12)
+08 0A 0A            StoreChar zFFly1 at (10,10)
+14 11 0C            StoreChar zDiaS at (17,12)
+08 12 0A            StoreChar zFFly1 at (18,10)
+14 19 0C            StoreChar zDiaS at (25,12)
+08 1A 0A            StoreChar zFFly1 at (26,10)
+14 21 0C            StoreChar zDiaS at (33,12)
+08 22 0A            StoreChar zFFly1 at (34,10)
+80 08 10 03 03 00   FilledRect of zSpace from ( 8,16); length = 3; height = 3; fill = zSpace
+80 10 10 03 03 00   FilledRect of zSpace from (16,16); length = 3; height = 3; fill = zSpace
+80 18 10 03 03 00   FilledRect of zSpace from (24,16); length = 3; height = 3; fill = zSpace
+80 20 10 03 03 00   FilledRect of zSpace from (32,16); length = 3; height = 3; fill = zSpace
+14 09 12            StoreChar zDiaS at ( 9,18)
+08 0A 10            StoreChar zFFly1 at (10,16)
+14 11 12            StoreChar zDiaS at (17,18)
+08 12 10            StoreChar zFFly1 at (18,16)
+14 19 12            StoreChar zDiaS at (25,18)
+08 1A 10            StoreChar zFFly1 at (26,16)
+14 21 12            StoreChar zDiaS at (33,18)
+08 22 10            StoreChar zFFly1 at (34,16)
+FF                  End of cave data.
+
+Map #5
+002 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW
+003 WX.....................................W
+004 W......................................W
+005 W......................................W
+006 W......................................W
+007 W......................................W
+008 W......................................W
+009 W......................................W
+010 W.......  q.....  q.....  q.....  q....W
+011 W.......   .....   .....   .....   ....W
+012 W....... d ..... d ..... d ..... d ....W
+013 W......................................W
+014 W......................................W
+015 W......................................W
+016 W.......  q.....  q.....  q.....  q....W
+017 W.......   .....   .....   .....   ....W
+018 W....... d ..... d ..... d ..... d ....W
+019 W......................................W
+020 W......................................W
+021 W......................................W
+022 W......................................W
+023 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW</PRE>
+
+
+<H2>Cave 6 (<A NAME="Cave F">Cave F</A>: Firefly dens)</H2>
+Each firefly is guarding a jewel
+<PRE>06                  Cave 06
+14                  Magic wall/amoeba slow growth for: 20 seconds
+28                  Diamonds worth: 40 points
+3C                  Extra diamonds worth: 60 points
+00 14 15 16 17      Randomiser seed values for difficulty levels 1-5
+04 06 07 08 08      Diamonds needed: 4, 6, 7, 8, 8 (for difficulty levels 1-5)
+96 78 64 5A 50      Cave time: 150, 120, 100, 90, 80 seconds
+0E                  Background color 1: Light blue
+0A                  Background color 2: Light red
+09                  Foreground color: Brown
+00 00               Unused
+10 00 00 00         Random objects:
+32 00 00 00             zBouS  :  50/256 = 19%
+                        second code unused (0%)
+                        third code unused (0%)
+                        fourth code unused (0%)
+Cave layout:
+82 01 03 0A 04 00   FilledRect of zBrick from ( 1, 3); length = 10; height = 4; fill = zSpace
+82 01 06 0A 04 00   FilledRect of zBrick from ( 1, 6); length = 10; height = 4; fill = zSpace
+82 01 09 0A 04 00   FilledRect of zBrick from ( 1, 9); length = 10; height = 4; fill = zSpace
+82 01 0C 0A 04 00   FilledRect of zBrick from ( 1,12); length = 10; height = 4; fill = zSpace
+41 0A 03 0D 04      Line of zDirt from (10, 3); length = 13; direction = down
+14 03 05            StoreChar zDiaS at ( 3, 5)
+08 04 05            StoreChar zFFly1 at ( 4, 5)
+14 03 08            StoreChar zDiaS at ( 3, 8)
+08 04 08            StoreChar zFFly1 at ( 4, 8)
+14 03 0B            StoreChar zDiaS at ( 3,11)
+08 04 0B            StoreChar zFFly1 at ( 4,11)
+14 03 0E            StoreChar zDiaS at ( 3,14)
+08 04 0E            StoreChar zFFly1 at ( 4,14)
+82 1D 03 0A 04 00   FilledRect of zBrick from (29, 3); length = 10; height = 4; fill = zSpace
+82 1D 06 0A 04 00   FilledRect of zBrick from (29, 6); length = 10; height = 4; fill = zSpace
+82 1D 09 0A 04 00   FilledRect of zBrick from (29, 9); length = 10; height = 4; fill = zSpace
+82 1D 0C 0A 04 00   FilledRect of zBrick from (29,12); length = 10; height = 4; fill = zSpace
+41 1D 03 0D 04      Line of zDirt from (29, 3); length = 13; direction = down
+14 24 05            StoreChar zDiaS at (36, 5)
+08 23 05            StoreChar zFFly1 at (35, 5)
+14 24 08            StoreChar zDiaS at (36, 8)
+08 23 08            StoreChar zFFly1 at (35, 8)
+14 24 0B            StoreChar zDiaS at (36,11)
+08 23 0B            StoreChar zFFly1 at (35,11)
+14 24 0E            StoreChar zDiaS at (36,14)
+08 23 0E            StoreChar zFFly1 at (35,14)
+25 03 14            StoreChar zPRFd1 at ( 3,20)
+04 26 14            StoreChar zPreOut at (38,20)
+FF                  End of cave data.
+
+Map #6
+002 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW
+003 Wwwwwwwwww....r.r..r........r.wwwwwwwwwW
+004 W         ...........r....r...         W
+005 W  dq     ..r..........r...r..     qd  W
+006 Wwwwwwwwww..r........r......r.wwwwwwwwwW
+007 W         ......r...r.......r.         W
+008 W  dq     ....r......r.rr.....     qd  W
+009 Wwwwwwwwww.rr........r.rr.....wwwwwwwwwW
+010 W         ....r.r....r..r.....         W
+011 W  dq     ....r.r....r..r..r..     qd  W
+012 Wwwwwwwwww.rr.r..r....r...r...wwwwwwwwwW
+013 W         .rr.r..r............         W
+014 W  dq     ....r..r........r...     qd  W
+015 Wwwwwwwwww.....r...r....r..r..wwwwwwwwwW
+016 W....r.r..r........r.....r............rW
+017 W......r....r....r..r.r...r..r.........W
+018 W..r....r.....r...r.......r..r.........W
+019 W..r........r......r.rr.........r......W
+020 Wr.X...r...........r.rr.........rr..r.PW
+021 W....r......r.rr......r........r..r....W
+022 Wrr.........r.rr.........r..r.r.r..r...W
+023 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW</PRE>
+
+
+<H2>Cave 7 (<A NAME="Cave G">Cave G</A>: Amoeba)</H2>
+Surround the amoeba with boulders, so it can't grow anymore. Pick up jewels that are created when it suffocates
+<PRE>07                  Cave 07
+4B                  Magic wall/amoeba slow growth for: 75 seconds
+0A                  Diamonds worth: 10 points
+14                  Extra diamonds worth: 20 points
+02 07 08 0A 09      Randomiser seed values for difficulty levels 1-5
+0F 14 19 19 19      Diamonds needed: 15, 20, 25, 25, 25 (for difficulty levels 1-5)
+78 78 78 78 78      Cave time: 120, 120, 120, 120, 120 seconds
+09                  Background color 1: Brown
+0A                  Background color 2: Light red
+0D                  Foreground color: Light green
+00 00               Unused
+00 10 08 00         Random objects:
+64 28 02 00             zSpace : 100/256 = 39%
+                        zBouS  :  40/256 = 15%
+                        zFFly1 :   2/256 =  0%
+                        fourth code unused (0%)
+Cave layout:
+42 01 07 0C 02      Line of zBrick from ( 1, 7); length = 12; direction = right
+42 1C 05 0B 02      Line of zBrick from (28, 5); length = 11; direction = right
+7A 13 15 02 02      Line of zAmoe from (19,21); length = 2; direction = right
+14 04 06            StoreChar zDiaS at ( 4, 6)
+14 04 0E            StoreChar zDiaS at ( 4,14)
+14 04 16            StoreChar zDiaS at ( 4,22)
+14 22 04            StoreChar zDiaS at (34, 4)
+14 22 0C            StoreChar zDiaS at (34,12)
+14 22 16            StoreChar zDiaS at (34,22)
+25 14 03            StoreChar zPRFd1 at (20, 3)
+04 27 07            StoreChar zPreOut at (39, 7)
+FF                  End of cave data.
+
+Map #7
+002 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW
+003 W. .. .rr..... ..r. X.... rr r..r. .  .W
+004 W ..r. .. .  .... .r.r. ...  r..r.d.. .W
+005 Wr.....  .q.  ... .r.r. ... wwwwwwwwwwwW
+006 W.r.d... .  ...... ..rr..r.... . ... . W
+007 Wwwwwwwwwwwww.r. ..   r.. .... ...r....W
+008 Wr. r...... ..r. ... ..r.  ..r.  q.....W
+009 Wr. r...... .. r..r.... ...r......r.rr.W
+010 W... ..r  ... ..r.  ..r.  ... ....r.rr.W
+011 W... ..r. .r.... ...q......r.r..  r..r.W
+012 W  .. r.... ..r.r.... .  .......  d.. .W
+013 W. ... .. .  .. .  .....rr r..r. . r.. W
+014 W.. d..r.r.... .  ......r  r..r. .  ...W
+015 W.r.  ..r.  ... .r.r. ...  r.. .... ...W
+016 W....  .r.  ... .r.r. .r. . r.. r.... .W
+017 W.  .... ....  .. r r..r.... ...r... .rW
+018 W..... .  .rr. ...  r.. .r... r..r.r...W
+019 W r...... ..r. .r.... .  ..r.  r.......W
+020 W r...... .. r..r.... ...r......r.rr...W
+021 W. ..r. ... ..r.  .aa.  ... ....r.rr...W
+022 W. .drq..r.... ...r......r.rq.....dr...W
+023 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW</PRE>
+
+
+<H2>Cave 8 (<A NAME="Cave H">Cave H</A>: Enchanted wall)</H2>
+Activate the enchanted wall and create as many jewels as you can
+<PRE>08                  Cave 08
+14                  Magic wall/amoeba slow growth for: 20 seconds
+0A                  Diamonds worth: 10 points
+14                  Extra diamonds worth: 20 points
+01 03 04 05 06      Randomiser seed values for difficulty levels 1-5
+0A 0F 14 14 14      Diamonds needed: 10, 15, 20, 20, 20 (for difficulty levels 1-5)
+78 6E 64 5A 50      Cave time: 120, 110, 100, 90, 80 seconds
+02                  Background color 1: Red
+0E                  Background color 2: Light blue
+09                  Foreground color: Brown
+00 00               Unused
+00 10 08 00         Random objects:
+5A 32 02 00             zSpace :  90/256 = 35%
+                        zBouS  :  50/256 = 19%
+                        zFFly1 :   2/256 =  0%
+                        fourth code unused (0%)
+Cave layout:
+14 04 06            StoreChar zDiaS at ( 4, 6)
+14 22 04            StoreChar zDiaS at (34, 4)
+14 22 0C            StoreChar zDiaS at (34,12)
+04 00 05            StoreChar zPreOut at ( 0, 5)
+25 14 03            StoreChar zPRFd1 at (20, 3)
+42 01 07 0C 02      Line of zBrick from ( 1, 7); length = 12; direction = right
+42 01 0F 0C 02      Line of zBrick from ( 1,15); length = 12; direction = right
+42 1C 05 0B 02      Line of zBrick from (28, 5); length = 11; direction = right
+42 1C 0D 0B 02      Line of zBrick from (28,13); length = 11; direction = right
+43 0E 11 08 02      Line of zMagic from (14,17); length = 8; direction = right
+14 0C 10            StoreChar zDiaS at (12,16)
+00 0E 12            StoreChar zSpace at (14,18)
+14 13 12            StoreChar zDiaS at (19,18)
+41 0E 0F 08 02      Line of zDirt from (14,15); length = 8; direction = right
+FF                  End of cave data.
+
+Map #8
+002 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW
+003 W . r.. . .. ..r. ..X ..r.  ..r. r... .W
+004 W.r.rr...... ..r...r.... ...r.....dr.r.W
+005 W r..r...  ...r..r. ..r.r...wwwwwwwwwwwW
+006 W...d ..r. q.....r..... ........rr r..rW
+007 Wwwwwwwwwwwww..r.r.... .  ......r  r..rW
+008 W.  ... ..r.  ..r.  .... rrr.....  r.. W
+009 W... r... q.. ..r.  .....r.rr..r. . r..W
+010 W..r. ..r. r.... ..... ...r r..r.... ..W
+011 W.....r ...... .  qrr. ...  r.. .r....rW
+012 Wr.r... . r...... ..r...r....r....dr.  W
+013 W......r. r......... r..r...wwwwwwwwwwwW
+014 W.rr...... ..r. ... ..r.  ..r.  ... r..W
+015 Wwwwwwwwwwwwwr........ ...r......r.rr..W
+016 W..r...  ...d..r. ..r.rr.........r.rr..W
+017 W.. ..r. .r...mmmmmmmm.........  r..r..W
+018 Wr.. r....r..r r...d .. .......  r..r..W
+019 W ... ..r. ...r.  .....rrrr..r. . r.. rW
+020 W. r..q.r.... .  ......rr r..r...  ...rW
+021 Wr.  ..r.  .....r.r. ...  r..r.... ...rW
+022 W...  .r.r .....r.r.....   .. .r....r..W
+023 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW</PRE>
+
+
+<H2>Cave 9 (<A NAME="Cave I">Cave I</A>: Greed)</H2>
+You have to get a lot of jewels here, lucky there are so many
+<PRE>09                  Cave 09
+14                  Magic wall/amoeba slow growth for: 20 seconds
+05                  Diamonds worth: 5 points
+0A                  Extra diamonds worth: 10 points
+64 89 8C FB 33      Randomiser seed values for difficulty levels 1-5
+4B 4B 50 55 5A      Diamonds needed: 75, 75, 80, 85, 90 (for difficulty levels 1-5)
+96 96 82 82 78      Cave time: 150, 150, 130, 130, 120 seconds
+08                  Background color 1: Orange
+04                  Background color 2: Purple
+09                  Foreground color: Brown
+00 00               Unused
+10 14 00 00         Random objects:
+F0 78 00 00             zBouS  : 240/256 = 93%
+                        zDiaS  : 120/256 = 46%
+                        third code unused (0%)
+                        fourth code unused (0%)
+Cave layout:
+82 05 0A 0D 0D 00   FilledRect of zBrick from ( 5,10); length = 13; height = 13; fill = zSpace
+01 0C 0A            StoreChar zDirt at (12,10)
+82 19 0A 0D 0D 00   FilledRect of zBrick from (25,10); length = 13; height = 13; fill = zSpace
+01 1F 0A            StoreChar zDirt at (31,10)
+42 11 12 09 02      Line of zBrick from (17,18); length = 9; direction = right
+40 11 13 09 02      Line of zSpace from (17,19); length = 9; direction = right
+25 07 0C            StoreChar zPRFd1 at ( 7,12)
+04 08 0C            StoreChar zPreOut at ( 8,12)
+FF                  End of cave data.
+
+Map #9
+002 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW
+003 Wdddrrddrddr.rrrrdrdd.ddrddrddddrrdrdrrW
+004 Wdrrdddrrrdrddrrrrrrdrrd.drdrrrrdrddrrdW
+005 Wddrrrrrrrdrddrr.rrrdrrdddrdr.rrdrrrddrW
+006 Wrrdrddrrrrrrdrrddd..ddrrdrddrrdrdd.rrdW
+007 Wrrdrddrrrrrrdrrd.drdrrrrdrdrdrrddrrdrdW
+008 Wdddrrdrd.ddrrddrrdddrrdrdrrr.drddrrdrdW
+009 Wrrrrrdrrdddd..rrrdrdd.rdrddr.rrddddddrW
+010 Wdrddwwwwwww.wwwwwdrrrrdrwwwwww.wwwwwwrW
+011 Wd.dd             rddrrrd             rW
+012 Wdrdr  XP         rddrrrd             rW
+013 Wdrrd             r.rrddr             rW
+014 Wdrrd             ddddrdr             dW
+015 Wrddd             drrd.dr             dW
+016 Wrrrr             drrddrr             rW
+017 Wdrdd             .rdrrdr             rW
+018 Wdrdd            wwwwwwwww            rW
+019 Wrrrd                                 rW
+020 Wrrrd             dd.rdrd             rW
+021 Wddrr             rrrdrdd             rW
+022 Wdd..wwwwwwwwwwwwwdrrrdddwwwwwwwwwwwwwdW
+023 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW</PRE>
+
+
+<H2>Cave 10 (<A NAME="Cave J">Cave J</A>: Tracks)</H2>
+Get the jewels, avoid the fireflies
+<PRE>0A                  Cave 10
+14                  Magic wall/amoeba slow growth for: 20 seconds
+19                  Diamonds worth: 25 points
+3C                  Extra diamonds worth: 60 points
+00 00 00 00 00      Randomiser seed values for difficulty levels 1-5
+0C 0C 0C 0C 0C      Diamonds needed: 12, 12, 12, 12, 12 (for difficulty levels 1-5)
+96 82 78 6E 64      Cave time: 150, 130, 120, 110, 100 seconds
+06                  Background color 1: Blue
+08                  Background color 2: Orange
+09                  Foreground color: Brown
+00 00               Unused
+00 00 00 00         Random objects:
+00 00 00 00             first code unused (0%)
+                        second code unused (0%)
+                        third code unused (0%)
+                        fourth code unused (0%)
+Cave layout:
+25 0D 03            StoreChar zPRFd1 at (13, 3)
+04 27 16            StoreChar zPreOut at (39,22)
+54 05 04 11 03      Line of zDiaS from ( 5, 4); length = 17; direction = down/right
+54 15 04 11 05      Line of zDiaS from (21, 4); length = 17; direction = down/left
+80 05 0B 11 03 08   FilledRect of zSpace from ( 5,11); length = 17; height = 3; fill = zFFly1
+C2 01 04 15 11      Rect of zBrick from ( 1, 4); length = 21; height = 17
+00 0D 04            StoreChar zSpace at (13, 4)
+C2 07 06 0D 0D      Rect of zBrick from ( 7, 6); length = 13; height = 13
+00 0D 06            StoreChar zSpace at (13, 6)
+C2 09 08 09 09      Rect of zBrick from ( 9, 8); length = 9; height = 9
+00 0D 08            StoreChar zSpace at (13, 8)
+C2 0B 0A 05 05      Rect of zBrick from (11,10); length = 5; height = 5
+00 0D 0A            StoreChar zSpace at (13,10)
+82 03 06 03 0F 08   FilledRect of zBrick from ( 3, 6); length = 3; height = 15; fill = zFFly1
+00 04 06            StoreChar zSpace at ( 4, 6)
+54 04 10 04 04      Line of zDiaS from ( 4,16); length = 4; direction = down
+FF                  End of cave data.
+
+Map #10
+002 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW
+003 W............X.........................W
+004 Wwwwwwwwwwwww wwwwwwww.................W
+005 Ww....d.............dw.................W
+006 Ww.w w.wwwwww wwwwww.w.................W
+007 Ww.qqq.wd.........dw.w.................W
+008 Ww.qqq.w.wwww wwww.w.w.................W
+009 Ww.qqq.w.wd.....dw.w.w.................W
+010 Ww.qqq.w.w.ww ww.w.w.w.................W
+011 Ww.qqq w w w   w w w w.................W
+012 Ww.qqqqwqwqwqqqwqwqwqw.................W
+013 Ww.qqq w w w   w w w w.................W
+014 Ww.qqq.w.w.wwwww.w.w.w.................W
+015 Ww.qqq.w.wd.....dw.w.w.................W
+016 Ww.qdq.w.wwwwwwwww.w.w.................W
+017 Ww.qdq.wd.........dw.w.................W
+018 Ww.qdq.wwwwwwwwwwwww.w.................W
+019 Ww.qdqd.............dw.................W
+020 Wwwwwwwwwwwwwwwwwwwwww.................W
+021 W......................................W
+022 W......................................W
+023 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW</PRE>
+
+
+<H2>Cave 11 (<A NAME="Cave K">Cave K</A>: Crowd)</H2>
+You must move a lot of boulders around in some tight spaces
+<PRE>0B                  Cave 11
+14                  Magic wall/amoeba slow growth for: 20 seconds
+32                  Diamonds worth: 50 points
+00                  Extra diamonds worth: 0 points
+00 04 66 97 64      Randomiser seed values for difficulty levels 1-5
+06 06 06 06 06      Diamonds needed: 6, 6, 6, 6, 6 (for difficulty levels 1-5)
+78 78 96 96 F0      Cave time: 120, 120, 150, 150, 240 seconds
+0B                  Background color 1: Gray 1
+08                  Background color 2: Orange
+09                  Foreground color: Brown
+00 00               Unused
+00 10 08 00         Random objects:
+64 50 02 00             zSpace : 100/256 = 39%
+                        zBouS  :  80/256 = 31%
+                        zFFly1 :   2/256 =  0%
+                        fourth code unused (0%)
+Cave layout:
+42 0A 03 09 04      Line of zBrick from (10, 3); length = 9; direction = down
+42 14 03 09 04      Line of zBrick from (20, 3); length = 9; direction = down
+42 1E 03 09 04      Line of zBrick from (30, 3); length = 9; direction = down
+42 09 16 09 00      Line of zBrick from ( 9,22); length = 9; direction = up
+42 0C 0F 11 02      Line of zBrick from (12,15); length = 17; direction = right
+42 05 0B 09 02      Line of zBrick from ( 5,11); length = 9; direction = right
+42 0F 0B 09 02      Line of zBrick from (15,11); length = 9; direction = right
+42 19 0B 09 02      Line of zBrick from (25,11); length = 9; direction = right
+42 1C 13 0B 01      Line of zBrick from (28,19); length = 11; direction = up/right
+14 04 03            StoreChar zDiaS at ( 4, 3)
+14 0E 03            StoreChar zDiaS at (14, 3)
+14 18 03            StoreChar zDiaS at (24, 3)
+14 22 03            StoreChar zDiaS at (34, 3)
+14 04 16            StoreChar zDiaS at ( 4,22)
+14 23 15            StoreChar zDiaS at (35,21)
+25 14 14            StoreChar zPRFd1 at (20,20)
+04 26 11            StoreChar zPreOut at (38,17)
+FF                  End of cave data.
+
+Map #11
+002 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW
+003 Wr.rd.rrr.w...drr..rw...d...r.w...dr.r.W
+004 W... .r.r.w...r r..rwr....r..rwr...r.rrW
+005 W.... ..rrw.r....r..w..r. rr..w....r.rrW
+006 Wr.r.. rrrw.r.... ..wr......r.wr......rW
+007 Wr. ...r..w.  ..r.rrw.......r.wr...... W
+008 Wrr..r....w...r.....wr.rr.....wr..r r..W
+009 W..r.rr..rwrr...r...wr.rr.....wr..r. .wW
+010 W..r...r..w...r.r..rwr..r. .rrw. r..qwrW
+011 Wr.r.wwwwwwwwwqwwwwwwwwwrwwwwwwwww..w. W
+012 W.r.  .....rrrr..r.r.rr..rr... r..rwr..W
+013 Wr.rr......rrrr..r. . r...r..r.rr.wr.rrW
+014 W. .r.r. w..rrr..r.... ...r.....rw.r.rrW
+015 W. .r.r. wr.wwwwwwwwwwwwwwwwwrr.w..r...W
+016 Wr.. rrr.wr....r...r... .rr....w.r.rr.rW
+017 Wr...rrr.wr.r... r..r.r...r.rrw.....r.PW
+018 W .r....rw  ..r.rrr.......r.rw...... ..W
+019 W..r.... w..r......r.rr.....wr..r.r...rW
+020 Wr.rr..r.wr...r....rXrr......r..rq..r..W
+021 Wr...r...w..r.rq......r... r.. r..rdr..W
+022 Wrr.d. ..w..r.rr......r..r. r.q.rr.r...W
+023 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW</PRE>
+
+
+<H2>Cave 12 (<A NAME="Cave L">Cave L</A>: Walls)</H2>
+You must blast hrough walls to get at some of the jewels. Drop a boulder on a firefly at the right time and place to do this
+<PRE>0C                  Cave 12
+14                  Magic wall/amoeba slow growth for: 20 seconds
+14                  Diamonds worth: 20 points
+00                  Extra diamonds worth: 0 points
+00 3C 02 3B 66      Randomiser seed values for difficulty levels 1-5
+13 13 0E 10 15      Diamonds needed: 19, 19, 14, 16, 21 (for difficulty levels 1-5)
+B4 AA A0 A0 A0      Cave time: 180, 170, 160, 160, 160 seconds
+0C                  Background color 1: Gray 2
+0A                  Background color 2: Light red
+09                  Foreground color: Brown
+00 00               Unused
+00 10 14 00         Random objects:
+3C 32 09 00             zSpace :  60/256 = 23%
+                        zBouS  :  50/256 = 19%
+                        zDiaS  :   9/256 =  3%
+                        fourth code unused (0%)
+Cave layout:
+42 0A 05 12 04      Line of zBrick from (10, 5); length = 18; direction = down
+42 0E 05 12 04      Line of zBrick from (14, 5); length = 18; direction = down
+42 12 05 12 04      Line of zBrick from (18, 5); length = 18; direction = down
+42 16 05 12 04      Line of zBrick from (22, 5); length = 18; direction = down
+42 02 06 0B 02      Line of zBrick from ( 2, 6); length = 11; direction = right
+42 02 0A 0B 02      Line of zBrick from ( 2,10); length = 11; direction = right
+42 02 0E 0F 02      Line of zBrick from ( 2,14); length = 15; direction = right
+42 02 12 0B 02      Line of zBrick from ( 2,18); length = 11; direction = right
+81 1E 04 04 04 00   FilledRect of zDirt from (30, 4); length = 4; height = 4; fill = zSpace
+08 20 05            StoreChar zFFly1 at (32, 5)
+81 1E 09 04 04 00   FilledRect of zDirt from (30, 9); length = 4; height = 4; fill = zSpace
+08 20 0A            StoreChar zFFly1 at (32,10)
+81 1E 0E 04 04 00   FilledRect of zDirt from (30,14); length = 4; height = 4; fill = zSpace
+08 20 0F            StoreChar zFFly1 at (32,15)
+25 03 14            StoreChar zPRFd1 at ( 3,20)
+04 27 16            StoreChar zPreOut at (39,22)
+FF                  End of cave data.
+
+Map #12
+002 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW
+003 Wr. ...rr.....r.r..r........r.....r..d.W
+004 W.....d.r....... ....r....r..r..... ..rW
+005 W.......rdw.r.w.. w...wr...r..  q . .. W
+006 Wdwwwwwwwwwww.w...w..rw.....r.    .....W
+007 Wr........w...w.r.w d.w.....r..........W
+008 Wrr..r....w...w...w..rwrr......r..d....W
+009 W..r.....rwrr.w...w..rwrr.........r...rW
+010 W.wwwwwwwwwww.w.r.w .rw.r....r  q ..d.rW
+011 Wr.r......w...w.r.w..rw.r..d..    ..r..W
+012 W.r.......wrr w..dw.. w...r.......d.r..W
+013 W ........wrr w..rw...w... ..r.....r...W
+014 W.wwwwwwwwwwwwwwwrw...w...r........r.  W
+015 W...r.r...w...wr..wr..w.r..r.r  q .....W
+016 W....r r..w...w...wd..w..r ...    ....dW
+017 W.... .r..w.d.w..rw.r.w...r. r.........W
+018 W.wwwwwwwwwww.w...w...w...r. r.........W
+019 W..r......w.r.w...wr.rw...... ..r......W
+020 Wr.X...r. w...w...wr.rw.........rd..r..W
+021 W....r....w.r.wd..w...w.... ...r..d. ..W
+022 Wrr.......w.r.wd..w...w..r..d.d.r..r...W
+023 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW</PRE>
+
+
+<H2>Cave 13 (<A NAME="Cave M">Cave M</A>: Apocalypse)</H2>
+Bring the butterflies and amoeba together and watch the jewels fly
+<PRE>0D                  Cave 13
+8C                  Magic wall/amoeba slow growth for: 140 seconds
+05                  Diamonds worth: 5 points
+08                  Extra diamonds worth: 8 points
+00 01 02 03 04      Randomiser seed values for difficulty levels 1-5
+32 37 3C 46 50      Diamonds needed: 50, 55, 60, 70, 80 (for difficulty levels 1-5)
+A0 9B 96 91 8C      Cave time: 160, 155, 150, 145, 140 seconds
+06                  Background color 1: Blue
+08                  Background color 2: Orange
+0D                  Foreground color: Light green
+00 00               Unused
+10 00 00 00         Random objects:
+28 00 00 00             zBouS  :  40/256 = 15%
+                        second code unused (0%)
+                        third code unused (0%)
+                        fourth code unused (0%)
+Cave layout:
+25 12 03            StoreChar zPRFd1 at (18, 3)
+04 0A 03            StoreChar zPreOut at (10, 3)
+3A 14 03            StoreChar zAmoe at (20, 3)
+42 05 12 1E 02      Line of zBrick from ( 5,18); length = 30; direction = right
+70 05 13 1E 02      Line of zBFly1 from ( 5,19); length = 30; direction = right
+50 05 14 1E 02      Line of zBouS from ( 5,20); length = 30; direction = right
+C1 05 15 1E 02      Rect of zDirt from ( 5,21); length = 30; height = 2
+FF                  End of cave data.
+
+Map #13
+002 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW
+003 Wr.....rr.P.....r.Xra.......r........r.W
+004 W.....r.r............r....r..r.r.......W
+005 W........r..r..............r...........W
+006 Wr.......r...........r......r..r.......W
+007 Wr........r.....r...r.......r..r.......W
+008 W.r..r........r......r.rr.........r....W
+009 W..r.....r...........r.rr.........r...rW
+010 W......r......r.r....r..r........r..r..W
+011 Wr.r..........r.r..........r...........W
+012 W..........rr.r..r....r...r....r..r.r..W
+013 W..........r..r..r...........r.....r...W
+014 W...r.r.......r...........r........r...W
+015 W...r.r...r....r...r.......r...........W
+016 W....r.r..r........r.....r............rW
+017 W......r....r....r..r.r......r.........W
+018 W..r.wwwwwwwwwwwwwwwwwwwwwwwwwwwwww....W
+019 W..r.BBBBBBBBBBBBBBBBBBBBBBBBBBBBBB....W
+020 Wr...rrrrrrrrrrrrrrrrrrrrrrrrrrrrrr.r..W
+021 W......................................W
+022 W.r................................r...W
+023 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW</PRE>
+
+
+<H2>Cave 14 (<A NAME="Cave N">Cave N</A>: Zigzag)</H2>
+Magically transform the butterflies into jewels, but don't waste any boulders and watch out the fireflies
+<PRE>0E                  Cave 14
+14                  Magic wall/amoeba slow growth for: 20 seconds
+0A                  Diamonds worth: 10 points
+14                  Extra diamonds worth: 20 points
+00 00 00 00 00      Randomiser seed values for difficulty levels 1-5
+1E 23 28 2A 2D      Diamonds needed: 30, 35, 40, 42, 45 (for difficulty levels 1-5)
+96 91 8C 87 82      Cave time: 150, 145, 140, 135, 130 seconds
+0C                  Background color 1: Gray 2
+08                  Background color 2: Orange
+09                  Foreground color: Brown
+00 00               Unused
+10 00 00 00         Random objects:
+00 00 00 00             first code unused (0%)
+                        second code unused (0%)
+                        third code unused (0%)
+                        fourth code unused (0%)
+Cave layout:
+81 0A 0A 0D 0D 00   FilledRect of zDirt from (10,10); length = 13; height = 13; fill = zSpace
+70 0B 0B 0C 03      Line of zBFly1 from (11,11); length = 12; direction = down/right
+C1 0C 0A 03 0D      Rect of zDirt from (12,10); length = 3; height = 13
+C1 10 0A 03 0D      Rect of zDirt from (16,10); length = 3; height = 13
+C1 14 0A 03 0D      Rect of zDirt from (20,10); length = 3; height = 13
+50 16 08 0C 02      Line of zBouS from (22, 8); length = 12; direction = right
+48 16 07 0C 02      Line of zFFly1 from (22, 7); length = 12; direction = right
+C1 17 06 03 04      Rect of zDirt from (23, 6); length = 3; height = 4
+C1 1B 06 03 04      Rect of zDirt from (27, 6); length = 3; height = 4
+C1 1F 06 03 04      Rect of zDirt from (31, 6); length = 3; height = 4
+25 03 03            StoreChar zPRFd1 at ( 3, 3)
+04 27 14            StoreChar zPreOut at (39,20)
+FF                  End of cave data.
+
+Map #14
+002 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW
+003 W..X...................................W
+004 W......................................W
+005 W......................................W
+006 W......................................W
+007 W.....................q.q.q.q.q.q......W
+008 W.....................r.r.r.r.r.r......W
+009 W......................................W
+010 W......................................W
+011 W......... B. . . . . .................W
+012 W.........  . . . . . .................W
+013 W.........  .B. . . . .................W
+014 W.........  . . . . . .................W
+015 W.........  . .B. . . .................W
+016 W.........  . . . . . .................W
+017 W.........  . . .B. . .................W
+018 W.........  . . . . . .................W
+019 W.........  . . . .B. .................W
+020 W.........  . . . . . .................W
+021 W.........  . . . . .B.................W
+022 W......................................W
+023 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW</PRE>
+
+
+<H2>Cave 15 (<A NAME="Cave O">Cave O</A>: Funnel)</H2>
+There is an enchanted wall at the bottom of the rock tunnel
+<PRE>0F                  Cave 15
+08                  Magic wall/amoeba slow growth for: 8 seconds
+0A                  Diamonds worth: 10 points
+14                  Extra diamonds worth: 20 points
+01 1D 1E 1F 20      Randomiser seed values for difficulty levels 1-5
+0F 14 14 19 1E      Diamonds needed: 15, 20, 20, 25, 30 (for difficulty levels 1-5)
+78 78 78 78 8C      Cave time: 120, 120, 120, 120, 140 seconds
+08                  Background color 1: Orange
+0E                  Background color 2: Light blue
+09                  Foreground color: Brown
+00 00               Unused
+00 10 08 00         Random objects:
+64 50 02 00             zSpace : 100/256 = 39%
+                        zBouS  :  80/256 = 31%
+                        zFFly1 :   2/256 =  0%
+                        fourth code unused (0%)
+Cave layout:
+42 02 04 0A 03      Line of zBrick from ( 2, 4); length = 10; direction = down/right
+42 0F 0D 0A 01      Line of zBrick from (15,13); length = 10; direction = up/right
+41 0C 0E 03 02      Line of zDirt from (12,14); length = 3; direction = right
+43 0C 0F 03 02      Line of zMagic from (12,15); length = 3; direction = right
+04 14 16            StoreChar zPreOut at (20,22)
+25 14 03            StoreChar zPRFd1 at (20, 3)
+FF                  End of cave data.
+
+Map #15
+002 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW
+003 Wr.rr..  r..r..r.r..Xr..r.rr..r.rr...r.W
+004 W.w.rr......r..r...r....w...r......r.r.W
+005 Wrrw.r... r.. r..r.r..rwr.... .. ..r.rqW
+006 W...wr..r. q.....r. ..wr.  .....rrrr..rW
+007 W.rr.wrr... r..r.r...wr. r......rrrr..rW
+008 W. r..wr..r.r ..r.rrw... rrr. ...rrr..rW
+009 W...rr.w. q..r..r.rw.....r.rr..r.r.rr..W
+010 W..r.r..w.rr.... .w...r.. rrr..r....r..W
+011 W... .rr.w....r. wqrr. ...rrr..r.r... rW
+012 Wr.r...r.rw.....wr..r. .r....r.  ..r.rrW
+013 W......r.rrw...w. ..rr..r.... ...r.....W
+014 W.rr......r....r...r..r.r ..r.rr... r..W
+015 W.rr......r.mmm..r....r...r......r.rr..W
+016 W..r... r...r..r.r..r.rr... .....r.rr..W
+017 W..r..r. .r....r.....r.  ......rrr..r. W
+018 Wr.. r....r..r.r....r.  .......rrr..r..W
+019 Wr...r..r.  ..r.  .... rrrr..r.r.rr..rrW
+020 W. r..q r....r.rr......rrrr..r. .rr.. rW
+021 Wr.rr..r.rr... .r.r. ...rrr..r.... ...rW
+022 W...rr.r.rr... .r.r.P...r r..r.r....r..W
+023 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW</PRE>
+
+
+<H2>Cave 16 (<A NAME="Cave P">Cave P</A>: Enchanted boxes)</H2>
+The top of each square room is an enchanted wall, but you'll have to blast your way inside
+<PRE>10                  Cave 16
+14                  Magic wall/amoeba slow growth for: 20 seconds
+0A                  Diamonds worth: 10 points
+14                  Extra diamonds worth: 20 points
+01 78 81 7E 7B      Randomiser seed values for difficulty levels 1-5
+0C 0F 0F 0F 0C      Diamonds needed: 12, 15, 15, 15, 12 (for difficulty levels 1-5)
+96 96 96 96 96      Cave time: 150, 150, 150, 150, 150 seconds
+09                  Background color 1: Brown
+0A                  Background color 2: Light red
+09                  Foreground color: Brown
+00 00               Unused
+10 00 00 00         Random objects:
+32 00 00 00             zBouS  :  50/256 = 19%
+                        second code unused (0%)
+                        third code unused (0%)
+                        fourth code unused (0%)
+Cave layout:
+25 01 03            StoreChar zPRFd1 at ( 1, 3)
+04 27 04            StoreChar zPreOut at (39, 4)
+81 08 13 04 04 00   FilledRect of zDirt from ( 8,19); length = 4; height = 4; fill = zSpace
+08 0A 14            StoreChar zFFly1 at (10,20)
+C2 07 0A 06 08      Rect of zBrick from ( 7,10); length = 6; height = 8
+43 07 0A 06 02      Line of zMagic from ( 7,10); length = 6; direction = right
+81 10 13 04 04 00   FilledRect of zDirt from (16,19); length = 4; height = 4; fill = zSpace
+08 12 14            StoreChar zFFly1 at (18,20)
+C2 0F 0A 06 08      Rect of zBrick from (15,10); length = 6; height = 8
+43 0F 0A 06 02      Line of zMagic from (15,10); length = 6; direction = right
+81 18 13 04 04 00   FilledRect of zDirt from (24,19); length = 4; height = 4; fill = zSpace
+08 1A 14            StoreChar zFFly1 at (26,20)
+81 20 13 04 04 00   FilledRect of zDirt from (32,19); length = 4; height = 4; fill = zSpace
+08 22 14            StoreChar zFFly1 at (34,20)
+FF                  End of cave data.
+
+Map #16
+002 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW
+003 WX..r..........r........r.....r..r.....W
+004 W.r.rr.........r...r........r......r.r.W
+005 W.r..r........r..r....r.r..........r.rrW
+006 W.......r..r.....r..............rr.r..rW
+007 W..r...r....r..r.r..............r..r..rW
+008 W.........r.....r........rrr.......r...W
+009 W....r....r.....r........r.rr..r....r..W
+010 W..r...mmmmmm..mmmmmm.....r.r..r.......W
+011 W.....rw....w..w..rrw.......r....r....rW
+012 Wr.r...w..r.w..w....w...r....r.....r...W
+013 W......w..r.w..w....wr..r........r.....W
+014 W.rr...w....wr.w....w.r.....r.......r..W
+015 W.rr...w....wrrw.r..w.....r......r.rr..W
+016 W..r...w....w..w....w.rr.........r.rr..W
+017 W.....rwwwwww..wwwwww............r..r..W
+018 Wr...r....r..r.r.................r..r..W
+019 W.............r........r.....r........rW
+020 W..r..r.  q ....  q ...r  q .r..  q ..rW
+021 Wr.....r    ....    ....    .r..    ..rW
+022 W......r.......................r....r..W
+023 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW</PRE>
+
+
+<H2>Cave 17 (<A NAME="Intermission 1">Intermission 1</A>)</H2>
+<PRE>11                  Cave 17
+14                  Magic wall/amoeba slow growth for: 20 seconds
+1E                  Diamonds worth: 30 points
+00                  Extra diamonds worth: 0 points
+0A 0B 0C 0D 0E      Randomiser seed values for difficulty levels 1-5
+06 06 06 06 06      Diamonds needed: 6, 6, 6, 6, 6 (for difficulty levels 1-5)
+0A 0A 0A 0A 0A      Cave time: 10, 10, 10, 10, 10 seconds
+0E                  Background color 1: Light blue
+02                  Background color 2: Red
+09                  Foreground color: Brown
+00 00               Unused
+00 14 00 00         Random objects:
+FF 09 00 00             zSpace : 255/256 = 99%
+                        zDiaS  :   9/256 =  3%
+                        third code unused (0%)
+                        fourth code unused (0%)
+Cave layout:
+87 00 02 28 16 07   FilledRect of zSteel from ( 0, 2); length = 40; height = 22; fill = zSteel
+87 00 02 14 0C 00   FilledRect of zSteel from ( 0, 2); length = 20; height = 12; fill = zSpace
+32 0A 0C            StoreChar zBFly3 at (10,12)
+10 0A 04            StoreChar zBouS at (10, 4)
+01 0A 05            StoreChar zDirt at (10, 5)
+25 03 05            StoreChar zPRFd1 at ( 3, 5)
+04 12 0C            StoreChar zPreOut at (18,12)
+FF                  End of cave data.
+
+Map #17
+002 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW
+003 W                   WWWWWWWWWWWWWWWWWWWW
+004 W         r         WWWWWWWWWWWWWWWWWWWW
+005 W  X      .         WWWWWWWWWWWWWWWWWWWW
+006 W                   WWWWWWWWWWWWWWWWWWWW
+007 W                   WWWWWWWWWWWWWWWWWWWW
+008 W                   WWWWWWWWWWWWWWWWWWWW
+009 W                   WWWWWWWWWWWWWWWWWWWW
+010 W                   WWWWWWWWWWWWWWWWWWWW
+011 W                   WWWWWWWWWWWWWWWWWWWW
+012 W         b       P WWWWWWWWWWWWWWWWWWWW
+013 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW
+014 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW
+015 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW
+016 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW
+017 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW
+018 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW
+019 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW
+020 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW
+021 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW
+022 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW
+023 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW</PRE>
+
+
+<H2>Cave 18 (<A NAME="Intermission 2">Intermission 2</A>)</H2>
+<PRE>12                  Cave 18
+14                  Magic wall/amoeba slow growth for: 20 seconds
+0A                  Diamonds worth: 10 points
+00                  Extra diamonds worth: 0 points
+0A 0B 0C 0D 0E      Randomiser seed values for difficulty levels 1-5
+10 10 10 10 10      Diamonds needed: 16, 16, 16, 16, 16 (for difficulty levels 1-5)
+0F 0F 0F 0F 0F      Cave time: 15, 15, 15, 15, 15 seconds
+06                  Background color 1: Blue
+0F                  Background color 2: Gray 3
+09                  Foreground color: Brown
+00 00               Unused
+00 00 00 00         Random objects:
+00 00 00 00             first code unused (0%)
+                        second code unused (0%)
+                        third code unused (0%)
+                        fourth code unused (0%)
+Cave layout:
+87 00 02 28 16 07   FilledRect of zSteel from ( 0, 2); length = 40; height = 22; fill = zSteel
+87 00 02 14 0C 01   FilledRect of zSteel from ( 0, 2); length = 20; height = 12; fill = zDirt
+50 01 03 09 03      Line of zBouS from ( 1, 3); length = 9; direction = down/right
+48 02 03 08 03      Line of zFFly1 from ( 2, 3); length = 8; direction = down/right
+54 01 05 08 03      Line of zDiaS from ( 1, 5); length = 8; direction = down/right
+50 01 06 07 03      Line of zBouS from ( 1, 6); length = 7; direction = down/right
+50 12 03 09 05      Line of zBouS from (18, 3); length = 9; direction = down/left
+54 12 05 08 05      Line of zDiaS from (18, 5); length = 8; direction = down/left
+50 12 06 07 05      Line of zBouS from (18, 6); length = 7; direction = down/left
+25 01 04            StoreChar zPRFd1 at ( 1, 4)
+04 12 04            StoreChar zPreOut at (18, 4)
+FF                  End of cave data.
+
+Map #18
+002 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW
+003 Wrq...............r.WWWWWWWWWWWWWWWWWWWW
+004 WXrq.............rP.WWWWWWWWWWWWWWWWWWWW
+005 Wd.rq...........r.d.WWWWWWWWWWWWWWWWWWWW
+006 Wrd.rq.........r.dr.WWWWWWWWWWWWWWWWWWWW
+007 W.rd.rq.......r.dr..WWWWWWWWWWWWWWWWWWWW
+008 W..rd.rq.....r.dr...WWWWWWWWWWWWWWWWWWWW
+009 W...rd.rq...r.dr....WWWWWWWWWWWWWWWWWWWW
+010 W....rd.rq.r.dr.....WWWWWWWWWWWWWWWWWWWW
+011 W.....rd.rr.dr......WWWWWWWWWWWWWWWWWWWW
+012 W......rd..dr.......WWWWWWWWWWWWWWWWWWWW
+013 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW
+014 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW
+015 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW
+016 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW
+017 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW
+018 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW
+019 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW
+020 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW
+021 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW
+022 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW
+023 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW</PRE>
+
+
+<H2>Cave 19 (<A NAME="Intermission 3">Intermission 3</A>)</H2>
+<PRE>13                  Cave 19
+04                  Magic wall/amoeba slow growth for: 4 seconds
+0A                  Diamonds worth: 10 points
+00                  Extra diamonds worth: 0 points
+0A 0B 0C 0D 0E      Randomiser seed values for difficulty levels 1-5
+0E 0E 0E 0E 0E      Diamonds needed: 14, 14, 14, 14, 14 (for difficulty levels 1-5)
+14 14 14 14 14      Cave time: 20, 20, 20, 20, 20 seconds
+06                  Background color 1: Blue
+08                  Background color 2: Orange
+09                  Foreground color: Brown
+00 00               Unused
+00 00 00 00         Random objects:
+00 00 00 00             first code unused (0%)
+                        second code unused (0%)
+                        third code unused (0%)
+                        fourth code unused (0%)
+Cave layout:
+87 00 02 28 16 07   FilledRect of zSteel from ( 0, 2); length = 40; height = 22; fill = zSteel
+87 00 02 14 0C 00   FilledRect of zSteel from ( 0, 2); length = 20; height = 12; fill = zSpace
+54 01 0C 12 02      Line of zDiaS from ( 1,12); length = 18; direction = right
+88 0F 09 04 04 08   FilledRect of zFFly1 from (15, 9); length = 4; height = 4; fill = zFFly1
+25 08 03            StoreChar zPRFd1 at ( 8, 3)
+04 12 07            StoreChar zPreOut at (18, 7)
+FF                  End of cave data.
+
+Map #19
+002 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW
+003 W       X           WWWWWWWWWWWWWWWWWWWW
+004 W                   WWWWWWWWWWWWWWWWWWWW
+005 W                   WWWWWWWWWWWWWWWWWWWW
+006 W                   WWWWWWWWWWWWWWWWWWWW
+007 W                 P WWWWWWWWWWWWWWWWWWWW
+008 W                   WWWWWWWWWWWWWWWWWWWW
+009 W              qqqq WWWWWWWWWWWWWWWWWWWW
+010 W              qqqq WWWWWWWWWWWWWWWWWWWW
+011 W              qqqq WWWWWWWWWWWWWWWWWWWW
+012 Wddddddddddddddqqqq WWWWWWWWWWWWWWWWWWWW
+013 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW
+014 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW
+015 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW
+016 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW
+017 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW
+018 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW
+019 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW
+020 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW
+021 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW
+022 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW
+023 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW</PRE>
+
+
+<H2>Cave 20 (<A NAME="Intermission 4">Intermission 4</A>)</H2>
+<PRE>14                  Cave 20
+03                  Magic wall/amoeba slow growth for: 3 seconds
+1E                  Diamonds worth: 30 points
+00                  Extra diamonds worth: 0 points
+00 00 00 00 00      Randomiser seed values for difficulty levels 1-5
+06 06 06 06 06      Diamonds needed: 6, 6, 6, 6, 6 (for difficulty levels 1-5)
+14 14 14 14 14      Cave time: 20, 20, 20, 20, 20 seconds
+06                  Background color 1: Blue
+08                  Background color 2: Orange
+09                  Foreground color: Brown
+00 00               Unused
+00 00 00 00         Random objects:
+00 00 00 00             first code unused (0%)
+                        second code unused (0%)
+                        third code unused (0%)
+                        fourth code unused (0%)
+Cave layout:
+87 00 02 28 16 07   FilledRect of zSteel from ( 0, 2); length = 40; height = 22; fill = zSteel
+87 00 02 14 0C 01   FilledRect of zSteel from ( 0, 2); length = 20; height = 12; fill = zDirt
+D0 0B 03 03 02      Rect of zBouS from (11, 3); length = 3; height = 2
+80 0B 07 03 06 00   FilledRect of zSpace from (11, 7); length = 3; height = 6; fill = zSpace
+43 0B 06 03 02      Line of zMagic from (11, 6); length = 3; direction = right
+43 0B 0A 03 02      Line of zMagic from (11,10); length = 3; direction = right
+50 08 07 03 03      Line of zBouS from ( 8, 7); length = 3; direction = down/right
+25 03 03            StoreChar zPRFd1 at ( 3, 3)
+04 09 0A            StoreChar zPreOut at ( 9,10)
+FF                  End of cave data.
+
+Map #20
+002 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW
+003 W..X.......rrr......WWWWWWWWWWWWWWWWWWWW
+004 W..........rrr......WWWWWWWWWWWWWWWWWWWW
+005 W...................WWWWWWWWWWWWWWWWWWWW
+006 W..........mmm......WWWWWWWWWWWWWWWWWWWW
+007 W.......r..   ......WWWWWWWWWWWWWWWWWWWW
+008 W........r.   ......WWWWWWWWWWWWWWWWWWWW
+009 W.........r   ......WWWWWWWWWWWWWWWWWWWW
+010 W........P.mmm......WWWWWWWWWWWWWWWWWWWW
+011 W..........   ......WWWWWWWWWWWWWWWWWWWW
+012 W..........   ......WWWWWWWWWWWWWWWWWWWW
+013 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW
+014 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW
+015 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW
+016 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW
+017 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW
+018 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW
+019 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW
+020 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW
+021 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW
+022 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW
+023 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW</PRE>
+
+
+<HR>
+<ADDRESS>Web page design by <A HREF="mailto:peterb@perth.dialix.oz.au">Peter Broadribb</A></ADDRESS>
+</BODY>
+</HTML>

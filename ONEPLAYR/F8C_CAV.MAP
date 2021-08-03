@@ -1,0 +1,41 @@
+# CaveToMap v2.50
+name F8C_CAV
+width 40
+height 22
+mapstart
+WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW
+Wrrrrrrrrrrrrrrr...........rr..........W
+W.....................................rW
+WP.....................................W
+Wmmmmmmmmmmmmmmm.......................W
+W               r......................W
+W               .r.................WwwwW
+W               ..r................W.r.W
+WQQQQQQQQQQQQQQQ...r...............W...W
+Wwwwwwwww...........r..............W...W
+W.......w............r.............W...W
+W.dddd.Qw.............rr...........W...W
+W.dddd.Qw..............r...........WwwwW
+W......Qw....QQQQ.......r..........W.r.W
+WQQQQQQQw....QddQ........r.........W...W
+W......Qw....QddQ.........r........W...W
+W......Qw....QddQ..........r.......W...W
+W......Qw....QQQQ...........r.......wwwW
+W.......w....................r.....WWWWW
+W.......w...........................dX.W
+W.......w..........................WWW.W
+WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW
+mapend
+delay 30
+time 255
+require 20
+dpoints 34
+dextra 99
+permeable 9
+amrate1 1
+milltime 20
+colour1 0
+colour2 0
+colour3 5
+colour4 6
+colour5 1

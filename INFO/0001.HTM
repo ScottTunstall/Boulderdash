@@ -1,0 +1,53 @@
+<HTML>
+<HEAD><TITLE>BDCFF Object 0001: Diamond</TITLE></HEAD>
+<BODY>
+<H1>BDCFF Object 0001: Diamond</H1>
+<STRONG>Object number:</STRONG> $0001<BR>
+<STRONG>Game class:</STRONG> Boulder Dash (by Peter Liepa)<BR>
+<STRONG>Object name:</STRONG> Diamond (or Jewel?)<P>
+
+In this document:
+<UL>
+    <LI><A HREF="#Properties">Properties</A>
+    <LI><A HREF="#Attributes">Attributes</A>
+    <LI><A HREF="#Graphics">Graphics</A>
+    <LI><A HREF="#Specification">Specification</A>
+</UL>
+
+<HR>
+<H2><A HREF="properties.html" NAME="Properties">Properties</A></H2>
+<STRONG>Animate:</STRONG> yes<BR>
+<STRONG>Impact explosive:</STRONG> no<BR>
+<STRONG>Chain explosion action:</STRONG> consumed<BR>
+<STRONG>Explosion type:</STRONG> n/a<BR>
+<STRONG>Rounded:</STRONG> yes<P>
+
+
+<HR>
+<H2><A NAME="Attributes">Attributes</A></H2>
+Attribute format: %00000000 0000000a<P>
+
+a: Flag indicating whether the diamond is currently considered to be "falling" or "stationary".
+The flag is set (1) when falling, clear (0) when stationary. It is recommended that all diamonds
+begin life as stationary diamonds.
+
+
+<HR>
+<H2><A NAME="Graphics">Graphics</A></H2>
+<IMG width=184 height=16 SRC="0001.gif" ALT="Diamond animation sequence"><BR>
+This GIF shows the animation sequence of a diamond from the C64 implementation of Boulder Dash (hence the
+graphics are 8 double-width pixels wide and 16 pixels high).<P>
+
+
+<HR>
+<H2><A NAME="Specification">Specification</A></H2>
+The diamond is almost identical to the <A HREF="0000.html">boulder</A>. Basically, you can take the <A HREF="0000.html">boulder</A>'s algorithm
+and replace all instances of "boulder" with "diamond", and in the case of falling through the
+magic wall, a diamond morphs into a <A HREF="0000.html">boulder</A> in the same way that <A HREF="0000.html">boulders</A> morph into diamonds.<P>
+
+Please refer to the <A HREF="0000.html">boulder</A> specification for full details.
+
+<HR>
+<ADDRESS>Web page design by <A HREF="mailto:peterb@perth.dialix.oz.au">Peter Broadribb</A></ADDRESS>
+</BODY>
+</HTML>

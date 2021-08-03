@@ -1,0 +1,41 @@
+# CaveToMap v2.50
+name ROMARTID
+width 40
+height 22
+mapstart
+WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW
+W  w  ddw w    w   wQQQQQQQQQw         W
+W cww www ww www    wQQQQQQQw  www www W
+W                   wQQQQQQw   www wdw W
+W                   wQQQQQQQw  Xww w.w W
+Wx.w wwx.www  www   wQQQQQQQw  www w w W
+Ww.w wwx.www  wrw    wQQQQQQw  www w w W
+Wwdw wP..xww  w.     wQQQQQQQw         W
+Wwww wwx www  www    wwwwwwwww     cc  W
+W                                      W
+W ww  www ww ww ww    wwwwwwwwww wwwww W
+W ww  www ww ww ww    wQQQQQQQQw wwwww W
+W                     wQQQQQQQQw       W
+Wwwwwwwww     ccc      wQQQQQQQQw wwwwwW
+Wddd.   w              wQQQQQQQQw  dddwW
+Wdddw w wwww.wwwwww ww  wQQQQQQQw   ddwW
+Wdddw w w       cww ww   wQQQQQQQw   dwW
+Wwwww   wwww.wwwwww ww   wQQQQQQQQw  wwW
+W     w           w ww w  wQQQQQQQw    W
+W www w  www    www    ww wQQQQQQQQw   W
+Wc       wF.      w        wQQQQQQQw   W
+WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW
+mapend
+delay 25
+time 255
+require 15
+dpoints 1
+dextra 98
+permeable 9
+amrate1 99
+milltime 999
+colour1 0
+colour2 0
+colour3 8
+colour4 9
+colour5 3

@@ -1,0 +1,261 @@
+<HTML>
+<HEAD><TITLE>BDCFF Object 0000: Boulder</TITLE></HEAD>
+<BODY>
+<H1>BDCFF Object 0000: Boulder</H1>
+<STRONG>Object number:</STRONG> $0000<BR>
+<STRONG>Game class:</STRONG> Boulder Dash (by Peter Liepa)<BR>
+<STRONG>Object name:</STRONG> Boulder<P>
+
+In this document:
+<UL>
+    <LI><A HREF="#Properties">Properties</A>
+    <LI><A HREF="#Attributes">Attributes</A>
+    <LI><A HREF="#Graphics">Graphics</A>
+    <LI><A HREF="#Interactions">Interactions with other objects</A>
+    <LI><A HREF="#Specification">Specification</A>
+    <LI><A HREF="#General Algorithm">General Algorithm</A>
+</UL>
+
+<HR>
+<H2><A HREF="properties.html" NAME="Properties">Properties</A></H2>
+<STRONG>Animate:</STRONG> yes<BR>
+<STRONG>Impact explosive:</STRONG> no<BR>
+<STRONG>Chain explosion action:</STRONG> consumed<BR>
+<STRONG>Explosion type:</STRONG> n/a<BR>
+<STRONG>Rounded:</STRONG> yes<P>
+
+
+<HR>
+<H2><A NAME="Attributes">Attributes</A></H2>
+Attribute format: %00000000 0000000a<P>
+
+a: Flag indicating whether the Boulder is currently considered to be "falling" or "stationary".
+The flag is set (1) when falling, clear (0) when stationary. It is recommended that all boulders
+begin life as stationary boulders.
+
+
+<HR>
+<H2><A NAME="Graphics">Graphics</A></H2>
+<IMG width=16 height=16 SRC="0000.gif" ALT="Boulder graphic"><BR>
+This GIF shows the graphic of a boulder from the C64 implementation of Boulder Dash (hence the
+graphic is 8 double-width pixels wide and 16 pixels high). The boulder does not have an animation
+sequence: it looks the same all the time.<P>
+
+
+<HR>
+<H2><A NAME="Interactions">Interactions with other objects</A></H2>
+The boulder interacts with the following objects:
+<UL>
+    <LI>Objects it can roll off: any object which is defined to be "rounded" (<A HREF="0003.html">brick wall</A>, boulder,
+<A HREF="0001.html">diamond</A>). However, in the special cases of rolling off boulders and <A HREF="0001.html">diamonds</A>, the boulder or <A HREF="0001.html">diamond</A>
+which it is rolling off must be stationary.
+    <LI>Objects it can cause to explode: any object which is defined to be "explosive" (<A HREF="0008.html">firefly</A>,
+butterfly, Rockford).
+    <LI>Magic wall
+</UL>
+
+
+<HR>
+<H2><A NAME="Specification">Specification</A></H2>
+The boulder, like the <A HREF="0001.html">diamond</A>, is an object which falls, rolls off some other objects, and can
+explode some other objects when it hits them.<P>
+
+<H3>Falling</H3>
+<UL>
+    <LI>A stationary boulder which is discovered to have space underneath it changes state into a falling boulder (with an appropriate sound played) and moves down one position.
+    <LI>A falling boulder which has space underneath it continues to fall another position.
+    <LI>A falling boulder discovered to <EM>not</EM> have space underneath it will have different effects depending on the object below:
+        <UL>
+            <LI>Cause explosion: if the object below is explosive (<A HREF="0008.html">firefly</A>, <A HREF="000A.html">amoeba</A>, Rockford), the boulder will cause the object below to explode
+            <LI>Magic wall: see below
+            <LI>Stop falling: for any other object below, an appropriate sound is played as of a boulder hitting an object. In addition, a check is made to see whether the boulder can roll (see below); if so, the boulder is moved to its new position and is still considered falling, otherwise the boulder remains in its current position but changes state into a stationary boulder.
+        </UL>
+</UL>
+
+<H4>Falling through magic wall</H4>
+If a falling boulder hits a magic wall, then:
+<OL>
+    <LI>A sound is played: the sound is as of a <EM><A HREF="0001.html">diamond</A></EM>hitting something. This sound is played regardless of what happens next.
+    <LI>If the magic wall was Dormant (a global attribute), the magic wall is now considered to be On.
+    <LI>If the magic wall is now On then
+        <UL>
+            <LI>if there is space in the position below the magic wall then the boulder morphs into a falling <A HREF="0001.html">diamond</A> and moves down <EM>two</EM> positions, to be below the magic wall
+            <LI>otherwise the boulder simply disappears
+        </UL>
+</OL>
+
+A stationary boulder sitting on top of a magic wall does not activate the magic wall or move in
+any way (not even rolling off it).
+
+<H3>Rolling</H3>
+Note that both stationary and falling boulders can roll.<P>
+
+If a boulder is discovered to have a stationary, rounded object (stationary boulder,
+stationary <A HREF="0001.html">diamond</A>, <A HREF="0003.html">brick wall</A>) below it,
+then the boulder will attempt to roll off the object below. Note that falling boulders and <A HREF="0001.html">diamonds</A> can roll off
+things too; they don't have to come to a halt first.<P>
+
+In order for a boulder or <A HREF="0001.html">diamond</A> to roll, not only must the object below be a <A HREF="0003.html">brick wall</A>, stationary
+boulder or stationary <A HREF="0001.html">diamond</A>, but the objects to the left and diagonally left/down (or right and
+diagonally right/down) must both be space. Preference is given to rolling to the left over
+rolling to the right. If these criteria are satisfied, the boulder or <A HREF="0001.html">diamond</A> is moved one space
+immediately to the side (not diagonally down) and is changes state to be falling (if it wasn't
+already).<P>
+
+If the boulder is not able to roll, it remains where it is, and changes state into a stationary
+boulder (if it wasn't already).<P>
+
+<H3>Causing explosions</H3>
+If a falling boulder hits an explosive object (<A HREF="0008.html">firefly</A>, butterfly, Rockford), then that object
+explodes, consuming the boulder in the explosion. The boulder itself does not explode.
+
+
+<HR>
+<H2><A NAME="General Algorithm">General Algorithm</A></H2>
+<PRE>procedure ScanStationaryBoulder(<STRONG>in</STRONG> positionType boulderPosition) 
+# Local variables
+    positionType NewPosition&#59;
+    objectType theObjectBelow&#59;
+
+# If the boulder can fall, move it down and mark it as falling.
+    NewPosition := GetRelativePosition(boulderPosition, down1)&#59;
+    theObjectBelow := GetObjectAtPosition(NewPosition)&#59;
+    if (theObjectBelow == objSpace) then
+        PlaceObject(objBoulder, attribFalling, NewPosition);
+        PlaceObject(objSpace, attribNone, boulderPosition);
+        RequestSound(boulderSound)&#59; # yes, even when it starts falling. This applies to diamonds too (requests diamondSound).
+    else
+
+# Failing that, see if the boulder can roll
+        if (CanRollOff(theObjectBelow)) then
+
+# Try rolling left
+            NewPosition := GetRelativePosition(boulderPosition, left1)&#59;
+            if ((GetObjectAtPosition(NewPosition) == objSpace) and (GetObjectAtPosition(GetRelativePosition(boulderPosition, down1left)) == objSpace)) then
+                PlaceObject(objBoulder, attribFalling, NewPosition);
+                PlaceObject(objSpace, attribNone, boulderPosition);
+            else
+
+# Try rolling right
+                NewPosition := GetRelativePosition(boulderPosition, right1)&#59;
+                if ((GetObjectAtPosition(NewPosition) == objSpace) and (GetObjectAtPosition(GetRelativePosition(boulderPosition, down1right)) == objSpace)) then
+                    PlaceObject(objBoulder, attribFalling, NewPosition);
+                    PlaceObject(objSpace, attribNone, boulderPosition);
+                endif
+            endif
+        endif
+    endif 
+endprocedure
+
+####################
+
+procedure ScanFallingBoulder(<STRONG>in</STRONG> positionType boulderPosition&#59;
+                             <STRONG>in/out</STRONG> magicWallStatusType magicWallStatus) 
+# Local variables
+    positionType NewPosition&#59;
+    objectType theObjectBelow&#59;
+
+# If the boulder can continue to fall, move it down.
+    NewPosition := GetRelativePosition(boulderPosition, down1)&#59;
+    theObjectBelow := GetObjectAtPosition(NewPosition)&#59;
+    if (theObjectBelow == objSpace) then
+        PlaceObject(objBoulder, attribFalling, NewPosition);
+        PlaceObject(objSpace, attribNone, boulderPosition);    # ie old position
+
+# If the object below is a magic wall, we activate it (if it's off), and 
+# morph into a diamond two spaces below if it's now active. If the wall 
+# is expired, we just disappear (with a sound still though).
+    elsif (theObjectBelow == objMagicWall) then
+            if (magicWallStatus == kMagicWallOff) then
+                magicWallStatus := kMagicWallOn)&#59;
+            endif
+            if (magicWallStatus == kMagicWallOn) then
+                NewPosition := GetRelativePosition(boulderPositon, down2)&#59;
+                if (GetObjectAtPosition(NewPosition) == objSpace) then
+                    PlaceObject(objDiamond, attribFalling, NewPosition);
+                endif
+            endif
+            PlaceObject(objSpace, attribNone, boulderPosition);
+            RequestSound(diamondSound)&#59; # note: Diamond sound
+        endif
+
+# Failing that, we've hit something, so we play a sound and see if we can roll.
+    else
+        RequestSound(boulderSound)&#59;
+        if (CanRollOff(theObjectBelow)) then
+
+# Try rolling left
+            NewPosition := GetRelativePosition(boulderPosition, left1)&#59;
+            if ((GetObjectAtPosition(NewPosition) == objSpace) and (GetObjectAtPosition(GetRelativePosition(boulderPosition, down1left)) == objSpace)) then
+                PlaceObject(objBoulder, attribFalling, NewPosition);
+                PlaceObject(objSpace, attribNone, boulderPosition);
+            else
+
+# Try rolling right
+                NewPosition := GetRelativePosition(boulderPosition, right1)&#59;
+                if ((GetObjectAtPosition(NewPosition) == objSpace) and (GetObjectAtPosition(GetRelativePosition(boulderPosition, down1right)) == objSpace)) then
+                    PlaceObject(objBoulder, attribFalling, NewPosition);
+                    PlaceObject(objSpace, attribNone, boulderPosition);
+
+# The boulder is sitting on an object which it could roll off, but it can't 
+# roll, so it comes to a stop.
+                else            
+                    PlaceObject(objBoulder, attribStationary, boulderPosition);
+                endif
+            endif
+
+# Failing all that, we see whether we've hit something explosive
+        elsif (ImpactExplosive(theObjectBelow) then
+            Explode(NewPosition, GetExplosionType(theObjectBelow));
+
+# And lastly, failing everything, the boulder comes to a stop.
+        else
+            PlaceObject(objBoulder, attribStationary, boulderPosition);
+        endif
+    endif 
+endprocedure
+
+####################
+
+function CanRollOff(<STRONG>in</STRONG> objectType anObjectBelow):Boolean 
+# If the specified object is one which a boulder or diamond can roll off, 
+# return true otherwise return false.
+
+# First of all, only objects which have the property of being "rounded" are
+# are ones which things can roll off. Secondly, if the object is a boulder
+# or diamond, the boulder or diamond must be stationary, not falling.
+
+# We're going to assume that GetObjectProperty() automatically returns "true"
+# for objBoulderStationary, objDiamondStationary, objBrickWall, and returns "false"
+# for everything else (including objBoulderFalling and objDiamondFalling).
+
+    return (GetObjectProperty(anObjectBelow, propertyRounded));
+endfunction
+
+####################
+
+function ImpactExplosive(<STRONG>in</STRONG> objectType anObject):Boolean 
+# If the specified object has the property of being something that can
+# explode, return true otherwise return false.
+# ImpactExplosive objects are: Rockford, Firefly, Butterfly.
+    return (GetObjectProperty(anObject, propertyImpactExplosive)); # true/false
+endfunction
+
+####################
+
+function GetExplosionType(<STRONG>in</STRONG> objectType anObject):explosionType;
+# Assuming that the specified object is in fact explosive, returns the type
+# of explosion (explodeToSpace or explodeToDiamonds)
+# Explosive objects are: Rockford, Firefly, Butterfly.
+
+    ASSERT (Explosive(anObjectBelow));
+    
+    return (GetObjectProperty(anObject, propertyExplosionType));
+endfunction
+
+####################</PRE>
+
+<HR>
+<ADDRESS>Web page design by <A HREF="mailto:peterb@perth.dialix.oz.au">Peter Broadribb</A></ADDRESS>
+</BODY>
+</HTML>

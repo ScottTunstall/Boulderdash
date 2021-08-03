@@ -1,0 +1,45 @@
+# Boulderoid v1.15
+author David J
+name LILLEN1_
+width 40
+height 22
+mapstart
+WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW
+WPxr..rw...x.r...............x.rr......W
+X....w....x.............r............x.W
+Ww.w.w..F..x.r..........r....r......x..W
+W..rrx.................................W
+Ww.wwx...r..x.x........x..............xW
+W......F......x...xr.... c ..r.......r.W
+Wx.x.........r....xx....c c............W
+W....r...r..........x... c ..x.....x...W
+W.............x.......r.c c.....r.rr.x.W
+W.F................r.........xxxx..xx..W
+W..........r........xxrr.r...x........xW
+W.....r...r..................r....x....W
+W..................rr..F..xxxx..xx.rx..W
+W..........r.........r..x..r...x....r..W
+W..rrrrrrrr.r........r...xxx......x...xW
+W.............r...x........x...xx.x..r.W
+W......................r.....x...xxx...W
+W....................F....r............W
+W.......................x....r.xr.xx.x.W
+W....r.r.r.r.r.r.r.............x...r..xW
+WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW
+mapend
+delay 25
+time 150
+require 25
+dpoints 10
+dextra 1
+permeable 8
+amrate1 100
+amoeba 23
+milltime 1
+colour1 0
+colour2 0
+colour3 10
+colour4 14
+colour5 3
+timepercent 100
+teleport 1234567890,YYYYYYYYYY,NNNNNNNNNN

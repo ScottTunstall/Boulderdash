@@ -1,0 +1,45 @@
+# Boulderoid v1.15
+author 
+name DH1_CAV_
+width 40
+height 22
+mapstart
+WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW
+WQ   x  x     aa x       c             W
+W                   a            Qca   W
+W a      w     a        a      a       W
+W    ac  a    c  w        c           aW
+Wc              c      x    xx         W
+X               aQc               a c cW
+W     a  a   a  QP c  cQ aa         x  W
+W     w      Q   w   c    c     aQ     W
+WQQ       c  wa                      x W
+W  Q     c    w    xQ     x    x c     W
+WQ     a w        x a rrQx   c   xx aQ W
+W   ax       a   c   c   Q          Q cW
+Wx          xQ         cQ           Q xW
+W a              axc  aacQ Q           W
+W  xx      a   c  c    x   x  a a  x xaW
+W a      x    Q      c   cxx    cx   c W
+Wc Q  c     a  x             xx xQ xQ  W
+W         x    x  x   Q    c           W
+W  Q    Q        Q   QxQ    x      x  cW
+W     c   Qc   c   c      a     ca    QW
+WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW
+mapend
+delay 0
+time 50
+require 23
+dpoints 1
+dextra 99
+permeable 9
+amrate1 1
+amoeba 23
+milltime 999
+colour1 0
+colour2 0
+colour3 8
+colour4 9
+colour5 3
+timepercent 100
+teleport 1234567890,YYYYYYYYYY,NNNNNNNNNN

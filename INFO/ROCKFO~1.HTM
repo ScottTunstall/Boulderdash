@@ -1,0 +1,163 @@
+<HTML>
+<HEAD><TITLE>BoulderDash Rockford info</TITLE>
+<LINK REV="made" HREF="mailto:peterb@perth.dialix.oz.au">
+</HEAD>
+<BODY>
+
+<H1>Rockford info</H1>
+Most of the info about Rockford is now in the <A HREF="BDCFF/objects/0006.html">BDCFF Rockford specification</A>.<P>
+Inside this document:<BR>
+<UL>
+	<LI><A HREF="#Before Rockford's birth">Before Rockford's birth</A>
+	<LI><A HREF="#birth and death">Rockford's birth and death</A>
+	<LI><A HREF="#Bonus lives">Bonus lives</A>
+	<LI><A HREF="#Collecting diamonds">Collecting diamonds</A>
+</UL>
+
+
+<HR>
+<H2><A NAME="Before Rockford's birth">Before Rockford's birth</A></H2>
+At the start of each cave, the inbox flashes for a time, then you hear the <A HREF="sounds.html#Crack sound">cracking sound</A> and see the inbox morph through four stages of <A HREF="rawCaveData.html#Object codes">pre-Rockford</A> before Rockford exists and can be moved (and killed). During this time, the status bar shows the cave number and lives remaining (see <A HREF="insideBoulderdash.html#Strings">Strings</A>). Once Rockford has been &quot;born&quot;, the status bar changes to show the number of diamonds needed and collected and so on, and only then does the cave timer begin. However, all the creatures still move around and do their normal stuff during this birth process.
+
+<H3>General Algorithm</H3>
+<PRE>procedure <A NAME="ScanPreRockford">ScanPreRockford</A>(in positionType currentScanPosition&#59;
+                          in integer preRockfordStage&#59;
+                          in integer TimeTilBirth) 
+# If it's time for Rockford to be born, we morph stages 1-3 to stages 2-4, 
+# or morph stage 4 into a real Rockford. Otherwise do nothing.
+
+    ASSERT(TimeTilBirth &gt;= 0)&#59;
+    ASSERT(preRockfordStage in {1, 2, 3, 4})&#59;
+
+    if (TimeTilBirth == 0) then
+        if (preRockfordStage &lt;= 3) then
+            PlacePreRockford(currentScanPosition, preRockfordStage+1)&#59;
+        else
+            PlaceRockford(currentScanPosition)&#59;
+        endif
+    endif 
+endprocedure ScanPreRockford</PRE>
+
+
+<HR>
+<H2><A NAME="birth and death">Rockford's birth and death</A></H2>
+An interesting feature of BoulderDash, and an important part of the feel of the game, is that
+the cave starts <EM>before</EM> Rockford exists, and continues on going after Rockford has died!<P>
+
+What happens is that when the cave initially starts up, Rockford doesn't yet exist, but still
+all the creatures will be able to move, boulders fall, explosions happen, etc. At the point
+where Rockford will appear is a flashing "in box" (functionally equivalent to steel wall; ie it
+can't be exploded by anything that explodes near by during this time). If any amoeba exists, it is
+silent. The status bar shows the cave code and number of lives remaining. In the C64 implementation,
+the "time until birth" varies a bit. Generally, it's four seconds, but it's six seconds if
+the game is running in two player mode with one joystick. An extra second is given if the game
+is playing on difficulty level 2 (I don't know why).<P>
+
+When this "time until birth" reaches zero, the flashing "in box" changes into a "pre-Rockford,
+stage 1" (also functionally equivalent to steel wall).
+A <A HREF="sounds.html#Crack sound">cracking sound</A> is played, and at that point amoeba sound is
+enabled. The status bar changes to
+its normal display (score, number of diamonds required, etc), and the cave timer starts.
+During the next four scan frames,
+the "pre-Rockford" morphs into stages 2, 3 and 4, and finally into a real Rockford, who can finally
+be moved and killed.<P>
+
+When Rockford dies, creatures continue to move, explosions happen,
+time continues to run out, etc. There is no flag in the code indicating
+whether or not Rockford has died; the entire game just continues right along (since Rockford is
+not encountered during the scan routine, the joystick won't be read and the player won't be able
+to move). If you let it, the game will keep on going until the player runs out of time, at which
+point the game finally stops.<P>
+
+What happens is that a count is kept of the number of scan frames that have
+passed without encountering Rockford (which, as it happens, can only happen if Rockford
+dies). Once 16 scan frames have gone by without Rockford being seen,
+<EM>then</EM> if the player hits fire, the cave finishes. This 16 frame
+threshold is used to prevent the problem that the player might hit fire
+before realising that they have died.
+
+
+<HR>
+<H2><A NAME="Bonus lives">Bonus lives</A></H2>
+A bonus life is earned every 500 points and at the start of every intermission, unless the player already has nine lives in which case no bonus life is awarded. When a bonus life is awarded, the space characters flicker with some horiontal lines in order to indicate that a bonus life has been awarded&#59; there is no sound played.
+
+<H3>General Algorithm</H3>
+<PRE>procedure CheckForBonusLife() 
+# Check to see whether the score has passed a 500 or a 1000 point boundary 
+# (in other words, you get a bonus life every 500 points).
+
+    if (CurrentPlayerData.score &gt;= CurrentPlayerData.nextBonusLifeScore) then
+        AddLife()&#59;
+        CurrentPlayerData.nextBonusLifeScore += 500&#59;
+    endif 
+endprocedure CheckForBonusLife
+
+####################
+
+procedure AddLife()
+
+    ASSERT(CurrentPlayerData.lives &lt;= 9)&#59;
+
+    if (CurrentPlayerData.lives &lt; 9) then
+        CurrentPlayerData.lives++&#59;
+        Make space objects flash to indicate bonus life&#59;
+    endif 
+endprocedure AddLife</PRE>
+
+
+<HR>
+<H2><A NAME="Collecting diamonds">Collecting diamonds</A></H2>
+<H3>Enough Diamonds collected</H3>
+When Rockford has collected enough diamonds, the background of the screen (normally black) flashes white for 5 ticks and the <A HREF="sounds.html#Crack sound">crack sound</A> is played. When the (inactive) outbox is come across during the next scan, it is morphed into an active outbox.
+
+When Rockford has collected enough diamonds to be able to exit the cave, the background of the screen
+(normally black) flashes white for 5 ticks and the <A HREF="sounds.html#Crack sound">crack sound</A>
+is played. When the (inactive) outbox is come across
+during the next scan, it is changed into an active outbox.<P>
+
+
+<H3>Falling diamonds</H3>
+Rockford is able to collect diamonds while they are falling. In particular, it is useful to hold down the fire button and collect diamonds as they fall past.
+
+<H3>General Algorithm</H3>
+<PRE>procedure <A NAME="ScanPreOutBox">ScanPreOutBox</A>(in positionType currentScanPosition&#59;
+                        in Boolean GotEnoughDiamonds) 
+# If Rockford has collected enough diamonds, we can change the 
+# pre-out box (ie an out box which has not yet been activated) 
+# into a flashing out box.
+
+    if (GotEnoughDiamonds) then
+        PlaceOutBox(currentScanPosition)&#59;
+    endif 
+endprocedure ScanPreOutBox
+
+####################
+
+procedure PickUpDiamond() 
+# Player has picked up a diamond. Increase their score, increase their number 
+# of diamonds collected, and check whether they have enough diamonds now.
+
+    RequestSound(pickedUpDiamondSound)&#59;
+    CurrentPlayerData.score += CurrentPlayerData.currentDiamondValue&#59;
+    CheckForBonusLife()&#59;
+    CurrentPlayerData.diamondsCollected++&#59;
+    CheckEnoughDiamonds() 
+endprocedure PickUpDiamond
+
+####################
+
+procedure CheckEnoughDiamonds()
+    if (CurrentPlayerData.diamondsCollected == CaveData.diamondsNeeded) then
+        CurrentPlayerData.gotEnoughDiamonds := true&#59;
+        CurrentPlayerData.currentDiamondValue := CaveData.extraDiamondValue&#59;
+        Update statusbar&#59;
+        RequestSound(crackSound)&#59;
+        Request screen to flash white to indicate got enough diamonds&#59;
+    endif 
+endprocedure CheckEnoughDiamonds</PRE>
+
+
+<HR>
+<ADDRESS>Web page design by <A HREF="mailto:peterb@perth.dialix.oz.au">Peter Broadribb &lt;peterb@perth.dialix.oz.au&gt;</A></ADDRESS>
+</BODY>
+</HTML>

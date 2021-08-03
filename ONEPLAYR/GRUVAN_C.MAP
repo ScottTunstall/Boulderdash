@@ -1,0 +1,45 @@
+# Boulderoid v1.15
+author 
+name GRUVAN_C
+width 40
+height 22
+mapstart
+WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW
+X     P                               cW
+W WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW
+W ..........r....Q.....................W
+W   .......................rd..Q.r.....W
+W..           F F...Q....rQ............W
+W......... ...........................dW
+W.....r... .......d.Q.................rW
+W..... ... ...r....QQ..d..............rW
+W.d.F           F..r......Q......r.....W
+W..................d...................W
+W...............r..d..rr............r..W
+W.........Q..d.......d.r...Q...........W
+W.............Q.....d..r...............W
+W..d...................................W
+W................d................Q....W
+W......................................W
+W.........................r............W
+WQ...........................dQ........W
+W..............Q.........d......Q.r....W
+W.......d...........................d..W
+WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW
+mapend
+delay 25
+time 255
+require 16
+dpoints 10
+dextra 99
+permeable 9
+amrate1 1
+amoeba 23
+milltime 999
+colour1 0
+colour2 0
+colour3 8
+colour4 9
+colour5 3
+timepercent 100
+teleport 1234567890,YYYYYYYYYY,NNNNNNNNNN

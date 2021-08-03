@@ -1,0 +1,41 @@
+# CaveToMap v2.50
+name DOT1_CAV
+width 40
+height 22
+mapstart
+WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW
+WP...........w.................wcdcrrrdW
+Www.wwwwwwww.w.wwx.xwwwwwwwwww.wdd.....W
+Hdw..dddddcw.w.wdddw..........dw...    W
+Wdwddddwdddw.w.wcddw.wwwwwwrwwww... c  W
+Wdwwmmmmmmmw.w.wwwww.wd............  . W
+Wdw..........w.....x.wdwwwwwwwwww..    W
+Wdw.mmmmmwwwww.www.x.wdw...w...ww..    W
+Wdw...... .....Fwwdw.wd..w...w..w      W
+Wdwwmmmmm wwwx.wwwdw.wwwwwwwwww.wQ     W
+Wdwww     wddd...wwwd...........w......W
+Wdwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwx.x.x.W
+Wd....wrQrx.....x...d w   c      w.w.w.W
+W.....wrrrw.  .wwwwwW w ww wwwww w.w.w.W
+W.c  .wrrrw. c.w....d w  w w   w w.w.w.W
+W.   .wwrww.  .x.wwwW ww w www w w.w.w.W
+W..d........d..w.x..d w  w   w w w.w.w.W
+W.....mmmmw......wwwW wwwwww w   w.w.w.W
+W...................w w      w w w.w.w.W
+Wwwwwwwwwwwwwwwwwww.w w wwwwww w wwwww.W
+Wa..................w   w      w     ..W
+WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW
+mapend
+delay 25
+time 255
+require 30
+dpoints 1
+dextra 90
+permeable 8
+amrate1 1
+milltime 255
+colour1 0
+colour2 0
+colour3 8
+colour4 9
+colour5 3

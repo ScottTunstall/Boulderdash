@@ -1,0 +1,41 @@
+# CaveToMap v2.50
+name SLOTT_CA
+width 40
+height 22
+mapstart
+WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW
+Wwwwwwwww.P.wwwwwwwwwwwww    w   wwwww W
+Ww      wF.Fw...........wd w w   w...w W
+WwX     wx.xw.wwwwww.wwwwQ w w  Qw...wcW
+Wwwwwww.ww.ww...w.....w.wwww.x.wwwww.w W
+Ww............w...w.w................w W
+Ww.wwwwwwwwwwwwwwwwww.wwwwwwwwwwwwww.w W
+Ww.wddddddd..  WWWWWW WWWWWw wwwwwww.wcW
+Ww.wddccdddw.w             w wddddww.w W
+Ww.wwwwwdddw.www.xw WW     . .ddddww.w W
+Ww.....wwwww.w w Fw ww.www.w wddddww.w W
+Wwwwww.......x F  w w rr w.w wwwwwww.wcW
+Ww   www.wwwwwwwwww wWFWFw.w wwwwwwx.w W
+Ww w         ww   w wWFWFw.wcw c   ..w W
+Ww w.......w wwcd . wWFWFw.w w ... .ww W
+Ww w.......w wwwwww.wwwwww.w w ... .wwcW
+Ww ......... wwddd.      w.w w ... .ww W
+Ww w.......w wwdddw.wwwx.w.w w ... .ww W
+Ww w.dddd..w wwWddw  wdddw.w w     .wwcW
+Ww wwwwwww.w wwWFWw dwdddw.wwwwwwwx.ww W
+W    c       wwwwwwwwwwwww..........ww W
+WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW
+mapend
+delay 25
+time 255
+require 20
+dpoints 1
+dextra 99
+permeable 9
+amrate1 99
+milltime 999
+colour1 0
+colour2 0
+colour3 8
+colour4 9
+colour5 3

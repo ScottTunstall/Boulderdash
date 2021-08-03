@@ -1,0 +1,95 @@
+<HTML>
+<HEAD><TITLE>BDCFF Object 0002: Magic wall</TITLE></HEAD>
+<BODY>
+<H1>BDCFF Object 0002: Magic wall</H1>
+<STRONG>Object number:</STRONG> $0002<BR>
+<STRONG>Game class:</STRONG> Boulder Dash (by Peter Liepa)<BR>
+<STRONG>Object name:</STRONG> Magic wall (or Enchanted wall?)<P>
+
+In this document:
+<UL>
+    <LI><A HREF="#Properties">Properties</A>
+    <LI><A HREF="#Attributes">Attributes</A>
+    <LI><A HREF="#Graphics">Graphics</A>
+    <LI><A HREF="#Interactions">Interactions with other objects</A>
+    <LI><A HREF="#Specification">Specification</A>
+    <LI><A HREF="#General Algorithm">General Algorithm</A>
+</UL>
+
+<HR>
+<H2><A HREF="properties.html" NAME="Properties">Properties</A></H2>
+<STRONG>Animate:</STRONG> no<BR>
+<STRONG>Impact explosive:</STRONG> no<BR>
+<STRONG>Chain explosion action:</STRONG> consumed<BR>
+<STRONG>Explosion type:</STRONG> n/a<BR>
+<STRONG>Rounded:</STRONG> no<P>
+
+
+<HR>
+<H2><A NAME="Attributes">Attributes</A></H2>
+Attribute format: %00000000 00000000<P>
+
+There are no attributes for this object type. (There is a global attribute, being the state
+of the wall: <STRONG>dormant</STRONG>, <STRONG>on</STRONG> or
+<STRONG>expired</STRONG>, but that doesn't apply to individual pieces of magic wall.)
+
+
+<HR>
+<H2><A NAME="Graphics">Graphics</A></H2>
+When <STRONG>dormant</STRONG> or <STRONG>expired</STRONG>, the magic wall looks like ordinary
+<A HREF="0003.html">brick wall</A>: <IMG width=16 height=16 SRC="0003.gif" ALT="Brick wall graphic"><P>
+
+When <STRONG>on</STRONG>, the magic wall animates in a 4-stage animation sequence: 
+<IMG width=88 height=16 SRC="0002.gif" ALT="Magic wall animation sequence"><P>
+
+This GIFs show the graphics from the C64 implementation of Boulder Dash (hence the
+graphics are 8 double-width pixels wide and 16 pixels high).
+
+
+<HR>
+<H2><A NAME="Interactions">Interactions with other objects</A></H2>
+Magic wall is inanimate. It doesn't actually do anything by itself, and therefore doesn't interact
+with any other objects.<P>
+
+Instead, other objects (<A HREF="0000.html">boulder</A>, <A HREF="0001.html">diamond</A>)
+interact with magic wall.<P>
+
+<HR>
+<H2><A NAME="Specification">Specification</A></H2>
+Magic wall starts life <STRONG>dormant</STRONG>, and visually looks just like ordinary <A HREF="0003.html">brick wall</A>,
+until a <A HREF="0000.html">boulder</A> or <A HREF="0001.html">diamond</A> falls on it. Then all magic wall in the cave gets <STRONG>turned on</STRONG>
+for a time: it sparkles in a distinctive way, it makes a continous tinkling sound, and in this time
+any boulder or diamond that hits the wall gets changed into a diamond or boulder respectively, and
+falls through, making an appropriate diamond sound or boulder sound respectively. After a certain
+time has elapsed (the magic wall milling time), the magic wall <STRONG>expires</STRONG>; it goes
+back to looking like ordinary brick wall, no longer makes any sound, and any boulder or diamond
+that fall on the wall just disappear (but still make the same sound as appropriate).<P>
+
+<H3>States of magic wall</H3>
+<OL>
+	<LI><STRONG>Dormant</STRONG>: Looks just like ordinary <A HREF="0003.html">brick wall</A>, until a <A HREF="0000.html">boulder</A> or <A HREF="0001.html">diamond</A> activates it.
+	<LI><STRONG>On</STRONG>: Sparkles, makes sound, and changes <A HREF="0000.html">boulders</A> and <A HREF="0001.html">diamonds</A> into diamonds and boulders, until the Magic Wall Milling Time runs out.
+	<LI><STRONG>Expired</STRONG>: Looks just like ordinary <A HREF="0003.html">brick wall</A>&#59; any <A HREF="0000.html">boulders</A> and <A HREF="0001.html">diamonds</A> hitting it just disappear but still with a sound.
+</OL>
+
+<H3>Objects move two squares in one frame</H3>
+Note that when a <A HREF="0000.html">boulder</A> or <A HREF="0001.html">diamond</A> hits a magic wall (whether <STRONG>on</STRONG> or not), the object effectively
+moves two squares in one frame: one moment it's above the wall, the next moment it's two squares
+down, below the wall&#59; it's never &quot;inside&quot; the wall. Note also that if there is any
+object underneath the wall at the point where the boulder or diamond falls through, the boulder or
+diamond is lost (which is sometimes a helpful way of getting rid of excess boulders).<P>
+
+<H3>Stationary objects don't fall through</H3>
+Note that a stationary <A HREF="0000.html">boulder</A> or <A HREF="0001.html">diamond</A> sits on a magic wall without falling through or turning it on.
+Note also that magic wall isn't "rounded"; boulders and diamonds do not roll off magic wall like they
+do <A HREF="0003.html">brick wall</A>.
+
+
+<HR>
+<H2><A NAME="General Algorithm">General Algorithm</A></H2>
+See the <A HREF="0000.html">boulder specification</A> for how boulders (and diamonds) interact with magic wall.
+
+<HR>
+<ADDRESS>Web page design by <A HREF="mailto:peterb@perth.dialix.oz.au">Peter Broadribb</A></ADDRESS>
+</BODY>
+</HTML>

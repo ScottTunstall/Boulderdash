@@ -1,0 +1,41 @@
+# CaveToMap v2.50
+name I_CAV___
+width 40
+height 22
+mapstart
+WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW
+WP. .............d.     .ddddd. .dddd..W
+W..             ... ... ....... .......W
+W.. ... ..dd ..      ..               .W
+W.. .d. ....... .... .. .... .. ..... .W
+W.. .d.  ...QQ  ..      .dd. .. .ddd. .W
+W   .d.. ......    .... ...   . .ddd. .W
+W. ..... ...... ....dd.     .   ..... .W
+W.                 ....... .QQ.       .W
+W.. ......... .... ....... .... .... ..W
+W.. .ddddd...       .. ... .... Q... ..W
+W.. .......d. .. .. ..rrd.      .... ..W
+W.. .ddd..... .. .. .. .d.... ...... ..W
+W   .....     .. .. .. .....      .. ..W
+W . ..... ...                .... .. ..W
+W . .QQ   .d. ..... .... .. .d... .. ..W
+W . ..... ... ..... ..Q. .. .d...    ..W
+W   ...             ..Q  .. .d... .....W
+W..     ..... ............. ..... .....W
+W...... ..... .........           .....W
+Wddddd.                 ..............XW
+WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW
+mapend
+delay 25
+time 255
+require 30
+dpoints 5
+dextra 5
+permeable 9
+amrate1 100
+milltime 999
+colour1 0
+colour2 0
+colour3 8
+colour4 9
+colour5 3

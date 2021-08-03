@@ -1,0 +1,45 @@
+# Boulderoid v1.15
+author John
+name JOHN1_CA
+width 40
+height 22
+mapstart
+WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW
+WQQQQQQQQQQQQQQQQwwwwwcccccccccccccccccW
+WQQQQQQQQQQQQQQQQwP.XwcccccccccccccccccW
+WQQQQQQQQQQQQQQQQwdddwcccccccccccccccccW
+WQQQQQQQQQQQQQQQQw.wwwcccccccccccccccccW
+WQQQQQQQQQQQQQQQQw...wcccccccccccccccccW
+WQQQQQQQQQQQQQQQQ..a..cccccccccccccccccW
+WQQQQQQQQQQQQQQQQwaaawcccccccccccccccccW
+WQQQQQQQQQQQQQQQQwaaawcccccccccccccccccW
+WQQQQQQQQQQQQQQQQwaaawcccccccccccccccccW
+WQQQQQQQQQQQQQQQQwaaawcccccccccccccccccW
+WQQQQQQQQQQQQQQQQwaaawcccccccccccccccccW
+WQQQQQQQQQQQQQQQQwaaawcccccccccccccccccW
+WQQQQQQQQQQQQQQQQwaaawcccccccccccccccccW
+WQQQQQQQQQQQQQQQQwaaawcccccccccccccccccW
+WQQQQQQQQQQQQQQQQwaaawcccccccccccccccccW
+WQQQQQQQQQQQQQQQQwaaawcccccccccccccccccW
+WQQQQQQQQQQQQQQQQwaaawcccccccccccccccccW
+WQQQQQQQQQQQQQQQQwaaawcccccccccccccccccW
+WQQQQQQQQQQQQQQQQwaaawcccccccccccccccccW
+WQQQQQQQQQQQQQQQQwaaawcccccccccccccccccW
+WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW
+mapend
+delay 0
+time 255
+require 3
+dpoints 1
+dextra 99
+permeable 1
+amrate1 1
+amoeba 23
+milltime 999
+colour1 0
+colour2 0
+colour3 8
+colour4 9
+colour5 3
+timepercent 100
+teleport 1234567890,YYYYYYYYYY,NNNNNNNNNN

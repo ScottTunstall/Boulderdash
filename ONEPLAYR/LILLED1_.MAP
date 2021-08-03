@@ -1,0 +1,41 @@
+# CaveToMap v2.50
+name LILLED1_
+width 40
+height 22
+mapstart
+WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW
+W   w w w w   . w   r w  r    r  w     W
+W   w w w w   w w  ...w www  www w     W
+WFW . .Fw wQ dw w   r w wwwmmwww w     W
+Wwwww www ww.xw ww wwww w      w w FFFFW
+W                    c           w.wwwwW
+Wwww wwww ww.ww wwmwwww    F           W
+WQdw w Fw w  Qw w   w w          wwwww.W
+Wdd. w Fw w   w w   w w          wd    W
+Wddw .dFw w   w w   .Fw wwww.www wdd   W
+Wwww wwww ww.ww ww wwww wc    Qw wddd  W
+W         wd Fw       rrw Q c  w wwwwwwW
+W ww wwww wwwww wwww    wwwwwwww       W
+W w     w    r  www                 r  W
+W w W  cw wwwww     wwwwww.www   wwwwwwW
+W wwwwwww w   . www w       Pw   w ....W
+W         wc  w . w w.x.www.ww   w  c.FW
+W wwwwx.w wwwww w w w w w    w   . ....W
+W w wc  w       w w w wcw    w   w . F W
+W w .dc w wwwww wcw w w w    w   wc....W
+W wFwd  w wd    www wcw wF XFw   w .F  W
+WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW
+mapend
+delay 25
+time 255
+require 25
+dpoints 1
+dextra 5
+permeable 8
+amrate1 1
+milltime 200
+colour1 0
+colour2 0
+colour3 8
+colour4 9
+colour5 3

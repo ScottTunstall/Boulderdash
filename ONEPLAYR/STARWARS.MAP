@@ -1,0 +1,41 @@
+# CaveToMap v2.50
+name STARWARS
+width 40
+height 22
+mapstart
+WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW
+W                                      W
+W                  ww     c            W
+W                ww..ww                W
+W              wwccccccww              W
+W    c   c   w ww.wwwwwwwww            W
+W          www .      .   Hww   c      W
+W        wwF . wrrrrr.wwwwwwwww      c W
+W      wwwwwww w......wF wF wF ww      W
+W   www .    . wmmmwwwww.ww.ww.wwww    W
+W  wwP  wwwwww .....               ww  W
+W    wwww    w wwwww.wrr.wwwwwwwwww    W
+W      wwFWF . .dw .  wx...ddwwww      W
+W        wwwww www wwwwx..ddQww      c W
+W  c       www .xw wQ  wdddww          W
+W            ww dw w ddwwww            W
+W        c     www .dddww              W
+W                wwwwwwc        c      W
+W             c    ww                  W
+W                 cc                   W
+W                                      W
+WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW
+mapend
+delay 25
+time 255
+require 5
+dpoints 1
+dextra 99
+permeable 9
+amrate1 1
+milltime 255
+colour1 0
+colour2 0
+colour3 8
+colour4 9
+colour5 3

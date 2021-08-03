@@ -1,0 +1,41 @@
+# CaveToMap v2.50
+name ZORZON_C
+width 40
+height 22
+mapstart
+WWWWWWWWWWWWWWWWWWWWWHWWWWWWWWWWWWWWWWWW
+W...............................x.....xW
+W...a................P.........r......xW
+W..........x.............r.........r...W
+W.........r.........r......r...........W
+W..........r...........................W
+W....r......x......................F...W
+W.......x....r..............x.r........W
+W........x...........r.................W
+W..F...............r.......rrr....r.x..W
+W..........r.....rr...........r..r.....W
+W...x.r...............rr...x...........W
+W.x..............r........x............W
+W........F................x......x.....W
+W......................................W
+W...........x..........................W
+W...............r.......wwwwwwwwwwwwww.W
+W......r..........r.....   ccccccccccc.W
+W.......................wwwwwwwwwwwwww.W
+W......................................W
+W.x....r.r..r......r.r.................W
+WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW
+mapend
+delay 25
+time 200
+require 85
+dpoints 1
+dextra 22
+permeable 4
+amrate1 1
+milltime 999
+colour1 0
+colour2 0
+colour3 8
+colour4 9
+colour5 3

@@ -1,0 +1,41 @@
+# CaveToMap v2.50
+name RROYAL_C
+width 40
+height 22
+mapstart
+WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWXW
+W ...................W..W......rwFdddw.W
+Wd...................WWWW W...rrwdFddw.W
+W ...................W     c.rrrwddddw.W
+Wd..Q   Qw.wQ   Q...   WWWW..rrrw.wwww.W
+WQ.. wwwws swwww ....W W......rrw..F...W
+W .. w W    W dw ....W W....s..rw......W
+W d. w W WWWWddw ....   cW.....rwwwwww.W
+W .. w      Wddw .... W ....W..rrrrrrx.W
+Wc.. wPW  W  ddw .... W W..W ..rrrrrx..W
+W .. wwwwwwwwwww ....        ...rrrx..xW
+Wc..Q           Q...W rrWW.......rx..x.W
+Wr.........r.........     rrrr....r....W
+Wdr.......rdr..........................W
+Wddr.....rdddr...........wmmmmw......ssW
+Wdddr...rdddddr..........w    w....ssssW
+Wddddr.rdddddddr........sw    w..ssssssW
+Wdddddrdddddddddr......sswQ  cwsssssss.W
+Wddddddddddddddddr....ssswwwwwwssss....W
+W....................sssssssssss.......W
+W                 ..sssssssssss........W
+WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW
+mapend
+delay 25
+time 150
+require 80
+dpoints 4
+dextra 91
+permeable 8
+amrate1 42
+milltime 50
+colour1 0
+colour2 0
+colour3 5
+colour4 11
+colour5 2

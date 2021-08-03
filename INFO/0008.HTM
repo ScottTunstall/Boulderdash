@@ -1,0 +1,191 @@
+<HTML>
+<HEAD><TITLE>BDCFF Object 0008: Firefly</TITLE></HEAD>
+<BODY>
+<H1>BDCFF Object 0008: Firefly</H1>
+<STRONG>Object number:</STRONG> $0008<BR>
+<STRONG>Game class:</STRONG> Boulder Dash (by Peter Liepa)<BR>
+<STRONG>Object name:</STRONG> Firefly<P>
+
+In this document:
+<UL>
+    <LI><A HREF="#Properties">Properties</A>
+    <LI><A HREF="#Attributes">Attributes</A>
+    <LI><A HREF="#Graphics">Graphics</A>
+    <LI><A HREF="#Interactions">Interactions with other objects</A>
+    <LI><A HREF="#Specification">Specification</A>
+    <LI><A HREF="#General Algorithm">General Algorithm</A>
+</UL>
+
+<HR>
+<H2><A HREF="properties.html" NAME="Properties">Properties</A></H2>
+<STRONG>Animate:</STRONG> yes<BR>
+<STRONG>Impact explosive:</STRONG> yes<BR>
+<STRONG>Chain explosion action:</STRONG> consumed<BR>
+<STRONG>Explosion type:</STRONG> explodeToSpace<BR>
+<STRONG>Rounded:</STRONG> no<P>
+
+
+<HR>
+<H2><A NAME="Attributes">Attributes</A></H2>
+Attribute format: %00000000 000000aa<P>
+
+aa: Initial "facing" direction:
+<UL>
+    <LI>00 = facing left
+    <LI>01 = facing up
+    <LI>10 = facing right
+    <LI>11 = facing down
+</UL>
+All fireflies should start life "facing left" (aa=00). This means that the first
+movement a fly will make is down (if possible), because the fly will turn to its left, resulting
+in moving down.
+
+
+<HR>
+<H2><A NAME="Graphics">Graphics</A></H2>
+<IMG width=184 height=16 SRC="0008.gif" ALT="Firefly animation sequence"><BR>
+This GIF shows the animation sequence of a firefly from the C64 implementation of Boulder Dash (hence the
+graphics are 8 double-width pixels wide and 16 pixels high).
+
+
+<HR>
+<H2><A NAME="Interactions">Interactions with other objects</A></H2>
+The firefly interacts with the following objects:
+<UL>
+    <LI>Explodes on contact with: <A HREF="000A.html">amoeba</A>, <A HREF="0006.html">Rockford</A>, Rockford (scanned this frame)
+</UL>
+
+
+<HR>
+<H2><A NAME="Specification">Specification</A></H2>
+Fireflies, like butterflies, are creatures which move around in a set pattern. If impacted, or on
+contact with <A HREF="000A.html">amoeba</A> or <A HREF="0006.html">Rockford</A>, fireflies explode into space.<P>
+
+Fireflies are considered to be facing in one of four directions (up, down, left, right) although
+visually you can't tell which direction a firefly is currently facing by looking at it. Fireflies
+always like to turn to their left if possible (going round and round in circles if possible),
+failing that they will go forward, or finally they will turn to their right if they can't move
+forward.
+
+<H3>Turning corners</H3>
+Fireflies do not always turn corners instantly. Flies can turn in their "preferred direction"
+instantly, but otherwise take time to turn against their "preferred direction".<P>
+
+In BoulderDash I (on the C64), fireflies always begin "facing left",
+meaning that they will make their first movement down if possible (because
+fireflies always try to turn left when possible). The C64 cave format allows
+you to specify the initial direction of each firefly individually, however
+all caves in the C64 BoulderDash I have their fireflies facing left to begin
+with. It is recommended that all fireflies begin life facing left.<P>
+
+The way a firefly works is this:
+<PRE>if (space to the firefly's left is empty) then
+    turn 90 degrees to firefly's left;
+    move one space in this new direction; 
+} else if (space ahead is empty) then
+    move one space forwards; 
+} else {
+    turn 90 degrees to the firefly's right;
+    _do not move_;
+}</PRE>
+
+The key thing to note is that if a firefly is forced to turn against its
+"preferred direction", it does not actually move for that frame.<P>
+
+The result is that when a firefly can make a left turn, it will do so
+"instantly", but if forced to make a right turn, it will pause for
+one frame before doing so. If forced to turn around (180 degrees), it will
+pause for two frames before going back the way it came.
+
+<H3>Checking for amoeba and Rockford</H3>
+A fly will check all four directions next to it for <A HREF="000A.html">amoeba</A> or <A HREF="0006.html">Rockford</A>
+<EM>before</EM> it attempts to move each frame. Should it find any amoeba or
+Rockford, it <A HREF="#Explosions">explodes</A> on the spot. It is the fly
+that explodes, not Rockford or the amoeba.<P>
+
+Because the check is made before
+the fly moves, you may momentarily see the fly next to an <A HREF="000A.html">amoeba</A>/<A HREF="0006.html">Rockford</A>
+for one frame before the explosion happens. Note that (unusually), the firefly
+will also explode if next to a "Rockford, scanned this frame". By "scanned this frame"
+I mean that Rockford has already moved once during this scan frame, and it is marked
+as such so that if the same Rockford is come across again in the same scan frame (because
+Rockford moved down or right) then the player won't have the opportinity to move Rockford
+again.
+
+
+<HR>
+<H2><A NAME="General Algorithm">General Algorithm</A></H2>
+<PRE>procedure ScanFirefly(<STRONG>in</STRONG> positionType positionOfFirefly;
+                      <STRONG>in</STRONG> directionType directionOfFirefly) 
+# Local variables
+    positionType NewPosition;
+    directionType NewDirection;
+
+# First check whether the firefly will explode by being next to Rockford,
+# Rockford-scanned-this-frame or amoeba but not amoeba-scanned-this-frame.
+    if (FlyWillExplode(positionOfFirefly)) then
+        Explode(positionOfFirefly, explodeToSpace);
+    else
+
+# Failing that, attempt to move turn left and move there if possible
+        NewPosition = GetNextFlyPosition(positionOfFirefly, directionOfFirefly, turnLeft);
+        if (GetObjectAtPosition(NewPosition) == objSpace) then
+            NewDirection = GetNewDirection(directionOfFirefly, turnLeft);
+            PlaceFirefly(NewPosition, NewDirection);
+            PlaceSpace(positionOfFirefly);  # ie old position
+        else
+
+# Failing that, attempt to move straight ahead
+            NewPosition = GetNextFlyPosition(positionOfFirefly, directionOfFirefly, straightAhead);
+            if (GetObjectAtPosition(NewPosition) == objSpace) then
+                PlaceFirefly(NewPosition, directionOfFirefly); # ie keep same direction
+                PlaceSpace(positionOfFirefly);  # ie old position
+            else
+
+# Failing that, turn to the right but do not move
+                NewDirection = GetNewDirection(directionOfFirefly, turnRight);
+                PlaceFirefly(positionOfFirefly, NewDirection);  # old position, new direction
+            endif
+        endif
+    endif 
+endprocedure
+
+####################
+
+function FlyWillExplode(<STRONG>in</STRONG> positionType aPosition):Boolean 
+# Check the four directions around a fly at a given position to see whether 
+# it will explode. Returns true if so, false if not.
+
+# Local variables
+    Boolean ExplodedYet; 
+
+# Check the four directions to see whether the fly will explode
+    ExplodedYet := CheckFlyExplode(GetRelativePosition(aPosition, up1));
+    if (not ExplodedYet) then
+        ExplodedYet := CheckFlyExplode(GetRelativePosition(aPosition, left1));
+    endif
+    if (not ExplodedYet) then
+        ExplodedYet := CheckFlyExplode(GetRelativePosition(aPosition, right1));
+    endif
+    if (not ExplodedYet) then
+        ExplodedYet := CheckFlyExplode(GetRelativePosition(aPosition, down1));
+    endif
+
+# Return function result
+    return ExplodedYet; 
+endfunction
+
+####################
+
+function CheckFlyExplode(<STRONG>in</STRONG> positionType aPosition):Boolean 
+# Check the given position to see whether it contains an object which a 
+# fly will explode if it is in contact with (ie Rockford or Amoeba). 
+# Returns true if so, false if not.
+
+    return (GetObjectAtPosition(aPosition) in {objRockford, objRockfordScanned, objAmoeba}); 
+endfunction</PRE>
+
+<HR>
+<ADDRESS>Web page design by <A HREF="mailto:peterb@perth.dialix.oz.au">Peter Broadribb</A></ADDRESS>
+</BODY>
+</HTML>

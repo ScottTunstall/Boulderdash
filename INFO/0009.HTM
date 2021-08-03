@@ -1,0 +1,78 @@
+<HTML>
+<HEAD><TITLE>BDCFF Object 0009: Butterfly</TITLE></HEAD>
+<BODY>
+<H1>BDCFF Object 0009: Butterfly</H1>
+<STRONG>Object number:</STRONG> $0009<BR>
+<STRONG>Game class:</STRONG> Boulder Dash (by Peter Liepa)<BR>
+<STRONG>Object name:</STRONG> Butterfly<P>
+
+In this document:
+<UL>
+    <LI><A HREF="#Properties">Properties</A>
+    <LI><A HREF="#Attributes">Attributes</A>
+    <LI><A HREF="#Graphics">Graphics</A>
+    <LI><A HREF="#Interactions">Interactions with other objects</A>
+    <LI><A HREF="#Specification">Specification</A>
+</UL>
+
+<HR>
+<H2><A HREF="properties.html" NAME="Properties">Properties</A></H2>
+<STRONG>Animate:</STRONG> yes<BR>
+<STRONG>Impact explosive:</STRONG> yes<BR>
+<STRONG>Chain explosion action:</STRONG> consumed<BR>
+<STRONG>Explosion type:</STRONG> explodeToDiamonds<BR>
+<STRONG>Rounded:</STRONG> no<P>
+
+
+<HR>
+<H2><A NAME="Attributes">Attributes</A></H2>
+Attribute format: %00000000 000000aa<P>
+
+aa: Initial "facing" direction:
+<UL>
+    <LI>00 = facing left
+    <LI>01 = facing up
+    <LI>10 = facing right
+    <LI>11 = facing down
+</UL>
+Note: These codes are <EM>different</EM> than those used internally by the Commodore 64
+implementation of Boulder Dash. The above codes are the same as for the <A HREF="0008.html">firefly</A>,
+for consistency, rather than the C64 implementation which uses 00=down, 01=left, 10=up,
+11=right.<P>
+
+All fireflies should start life "facing down" (aa=11). This means that the first
+movement a butterfly will make is left (if possible), because the fly will turn to its right, resulting
+in moving left.
+
+
+<HR>
+<H2><A NAME="Graphics">Graphics</A></H2>
+<IMG width=184 height=16 SRC="0009.gif" ALT="Butterfly animation sequence"><BR>
+This GIF shows the animation sequence of a butterfly from the C64 implementation of Boulder Dash (hence the
+graphics are 8 double-width pixels wide and 16 pixels high).
+
+
+<HR>
+<H2><A NAME="Interactions">Interactions with other objects</A></H2>
+The butterfly interacts with the following objects:
+<UL>
+    <LI>Explodes on contact with: <A HREF="000A.html">amoeba</A>, <A HREF="0006.html">Rockford</A>, Rockford (scanned this frame)
+</UL>
+
+
+<HR>
+<H2><A NAME="Specification">Specification</A></H2>
+Butterflies are the same as <A HREF="0008.html">fireflies</A> except
+<UL>
+	<LI>butterflies usually begin life facing down rather than left
+	<LI>butterflies prefer to go to their right (failing that go straight, failing that turn left)
+	<LI>they look different
+	<LI>when they explode, they explode to diamonds rather than space
+</UL>
+
+Please refer to the <A HREF="0008.html">firefly</A> specification for full details.
+
+<HR>
+<ADDRESS>Web page design by <A HREF="mailto:peterb@perth.dialix.oz.au">Peter Broadribb</A></ADDRESS>
+</BODY>
+</HTML>

@@ -1,0 +1,45 @@
+# Boulderoid v1.15
+author 
+name MEDELTID
+width 40
+height 22
+mapstart
+WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW
+WPw.........  W   W      W.........w.ddW
+W w.w.w.....     WW WW    .........w..dW
+W F.w.w......W W    Q  W W.........w...W
+W...........   Q W  W W    ........w.xwW
+W.ww.ww...... WW W W    WW.............W
+W............W        W   .............W
+W.ww.........  W WW W   W..............W
+W............... ..... ................W
+W......................................W
+W......................................W
+W...............r......................W
+Wr...........r.........................W
+W........r..........r..................W
+W...............r.......r..............W
+W..r....r..r....................c     cW
+W............................... c     W
+W.......................r.......  wx.wwW
+Www.w........r...r.............. cw...wW
+W...w..r.r........r.............  w....W
+Wa..w.......r......r....rr......ccwwwwXW
+WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW
+mapend
+delay 0
+time 255
+require 25
+dpoints 1
+dextra 99
+permeable 7
+amrate1 1
+amoeba 23
+milltime 999
+colour1 0
+colour2 0
+colour3 8
+colour4 9
+colour5 3
+timepercent 100
+teleport 1234567890,YYYYYYYYYY,NNNNNNNNNN

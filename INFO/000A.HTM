@@ -1,0 +1,145 @@
+<HTML>
+<HEAD><TITLE>BDCFF Object 000A: Amoeba</TITLE></HEAD>
+<BODY>
+<H1>BDCFF Object 000A: Amoeba</H1>
+<STRONG>Object number:</STRONG> $000A<BR>
+<STRONG>Game class:</STRONG> Boulder Dash (by Peter Liepa)<BR>
+<STRONG>Object name:</STRONG> Amoeba<P>
+
+In this document:
+<UL>
+    <LI><A HREF="#Properties">Properties</A>
+    <LI><A HREF="#Attributes">Attributes</A>
+    <LI><A HREF="#Graphics">Graphics</A>
+    <LI><A HREF="#Interactions">Interactions with other objects</A>
+    <LI><A HREF="#Specification">Specification</A>
+    <LI><A HREF="#General Algorithm">General Algorithm</A>
+</UL>
+
+<HR>
+<H2><A HREF="properties.html" NAME="Properties">Properties</A></H2>
+<STRONG>Animate:</STRONG> yes<BR>
+<STRONG>Impact explosive:</STRONG> no<BR>
+<STRONG>Chain explosion action:</STRONG> consumed<BR>
+<STRONG>Explosion type:</STRONG> n/a<BR>
+<STRONG>Rounded:</STRONG> no<P>
+
+
+<HR>
+<H2><A NAME="Attributes">Attributes</A></H2>
+Attribute format: %00000000 00000000<P>
+
+There are no attributes for this object type.
+
+
+<HR>
+<H2><A NAME="Graphics">Graphics</A></H2>
+<IMG width=184 height=16 SRC="000A.gif" ALT="Amoeba animation sequence"><BR>
+This GIF shows the animation sequence of amoeba from the C64 implementation of
+Boulder Dash (hence the graphics are 8 double-width pixels wide and 16 pixels high).
+
+
+<HR>
+<H2><A NAME="Interactions">Interactions with other objects</A></H2>
+The boulder interacts with the following objects:
+<UL>
+    <LI>Objects it can grow into: space, <A HREF="0007.html">dirt</A>
+</UL>
+
+
+<HR>
+<H2><A NAME="Specification">Specification</A></H2>
+Amoeba is stuff that grows randomly. If trapped such that it can't grow any more, it "suffocates"
+and turns into <A HREF="0001.html">diamonds</A>. If it grows too large, it turns into
+<A HREF="0000.html">boulders</A>. <A HREF="0008.html">Fireflies</A> and <A HREF="0009.html">butterflies</A>
+will explode on contact with amoeba.<P>
+
+Every scan, a count is kept of how many amoeba have been found. For each
+amoeba found during the current scan, it does these things:
+<OL>
+	<LI>If there were too many (see below) amoeba found in the scan during the <EM>last</EM> frame, the amoeba is considered to have grown too large, and so all amoeba found in <EM>this</EM> scan frame are quietly replaced with <A HREF="0000.html">boulders</A>.
+	<LI>Failing that, if it was determined in the scan during the <EM>last</EM> frame that the amoeba was completely enclosed (could not grow), then each amoeba is quietly replaced with a <A HREF="0001.html">diamond</A>.
+	<LI>Failing that, if there have been no amoeba found during the <EM>current</EM> scan that had the potential to grow, then a check is made to see whether this amoeba could grow. If it is possible for it to grow, then the flag is changed to indicate that there is at least one amoeba in existance that can grow during this frame.
+	<LI>If the amoeba did not turn into a diamond or a boulder (in steps 1 or 2 above), it may or may not attempt to grow. A random number is generated to decide whether the amoeba will attempt grow: it has a 4/128 chance (about 3%) normally, or a 4/16 chance (25%) in some circumstances. If the decision is that the amoeba will atempt to grow, it randomly chooses one of the four directions to grow in. If that direction contains a space or <A HREF="0007.html">dirt</A>, the amoeba grows to fill that spot. The new amoeba just grown does not itself get the chance to grow until the next frame (ie the new amoeba is marked as &quot;amoeba, scanned this frame&quot;).
+</OL>
+
+<h3>How many is too many?</H3>
+For the Commodore 64 implementation of Boulder Dash, "too many" amoeba (the point where they turn
+into boulders) is 200 or more. Since other implementations of Boulder Dash may permit cave sizes
+other than 40 x 22 (= 880 squares), I suggest that "too many" is defined as being 200/880 = 22.7%
+of the total number of squares available in the cave. In other words, once 22.7% or more of the cave
+is occupied by amoeba, it should turn into boulders.
+
+<H3>When is it 3% and when 25%?</H3>
+Initially, the amoeba growth probability is 4/128 (about 3%). Once the
+"amoeba slow growth time" has elapsed, the amoeba suddenly starts growing
+a lot quicker (amoeba growth probability = 25%). The "amoeba slow growth time"
+is set on a cave-by-cave basis, and is in seconds.
+
+
+<HR>
+<H2><A NAME="General Algorithm">General Algorithm</A></H2>
+<PRE>procedure ScanAmoeba(<STRONG>in</STRONG> positionType positionOfAmoeba;
+                     <STRONG>in</STRONG> integer anAmoebaRandomFactor;
+                     <STRONG>in</STRONG> Boolean amoebaSuffocatedLastFrame;
+                     <STRONG>inout</STRONG> Boolean atLeastOneAmoebaFoundThisFrameWhichCanGrow;
+                     <STRONG>in</STRONG> integer totalAmoebaFoundLastFrame;
+                     <STRONG>inout</STRONG> integer numberOfAmoebaFoundThisFrame) 
+# Local variables
+    directionType direction;
+    positionType NewPosition;
+
+    ASSERT(anAmoebaRandomFactor &gt; 0);
+    ASSERT(totalAmoebaFoundLastFrame &gt; 0);
+    ASSERT(numberOfAmoebaFoundThisFrame &gt; 0);
+    numberOfAmoebaFoundThisFrame++;
+
+# If the amoeba grew too big last frame, morph into a boulder.
+# kTooManyAmoeba = 200 for original Boulder Dash.
+    if (totalAmoebaFoundLastFrame &gt;= kTooManyAmoeba) then
+        PlaceObject(objBoulder, attribStationary, positionOfAmoeba);
+    else
+
+# If the amoeba suffocated last frame, morph into a diamond
+        if (amoebaSuffocatedLastFrame) then
+            PlaceObject(objDiamond, attribStationary, positionOfAmoeba);
+        else
+
+# If we haven't yet found any amoeba this frame which can grow, we check to 
+# see whether this particular amoeba can grow.
+            if (not atLeastOneAmoebaFoundThisFrameWhichCanGrow) then
+                foreach direction in (up1, left1, right1, down1) do
+                    if (GetObjectAtPosition(GetRelativePosition(positionOfAmoeba, direction)) in {objSpace, objDirt}) then
+                        atLeastOneAmoebaFoundThisFrameWhichCanGrow := true;
+                    endif
+                endforeach
+            endif
+
+# If this amoeba decides to attempt to grow, it randomly chooses a direction, 
+# and if it can grow in that direction, does so.
+            if (AmoebaRandomlyDecidesToGrow(anAmoebaRandomFactor)) then
+                direction := GetRandomDirection();
+                NewPosition = GetRelativePosition(positionOfAmoeba, direction);
+                if (GetObjectAtPosition(NewPosition) in {objSpace, objDirt}) then
+                    PlaceObject(objAmoeba, attribNone, NewPosition);
+                endif
+            endif
+        endif
+    endif 
+endprocedure
+
+####################
+
+function AmoebaRandomlyDecidesToGrow(<STRONG>in</STRONG> integer anAmoebaRandomFactor):Boolean 
+# Randomly decide whether this amoeba is going to attempt to grow or not. 
+# anAmoebaRandomFactor should normally be 127 (slow growth) but sometimes is 
+# changed to 15 (fast growth) if the amoeba has been alive too long.
+    ASSERT(anAmoebaRandomFactor in {15, 127});
+    return (GetRandomNumber(0, anAmoebaRandomFactor) &lt; 4); 
+endfunction</PRE>
+
+
+<HR>
+<ADDRESS>Web page design by <A HREF="mailto:peterb@perth.dialix.oz.au">Peter Broadribb</A></ADDRESS>
+</BODY>
+</HTML>

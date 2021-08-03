@@ -1,0 +1,41 @@
+# CaveToMap v2.50
+name FSLOTT_C
+width 40
+height 22
+mapstart
+WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW
+W......................................W
+W...wwww..........wwww.................W
+W...w  wwwwwwwwwwww  w.................W
+W...w  w          w  w.................W
+W...ww w          w ww.................W
+W....w              w..................W
+W....w              w..................W
+W....w              w..................W
+W....w              w..................W
+W....w              w..................W
+W....w              w.rr...............W
+W...ww w          w ww.................W
+W...w  w          w  w.................W
+W...w  wwwwwwwwwwww  w.................W
+W...wwww..........wwww.................W
+W......................................W
+W......................................W
+W......................................W
+W......................................W
+W......................................W
+WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW
+mapend
+delay 0
+time 0
+require 0
+dpoints 0
+dextra 0
+permeable 9
+amrate1 1
+milltime 999
+colour1 0
+colour2 0
+colour3 8
+colour4 9
+colour5 3

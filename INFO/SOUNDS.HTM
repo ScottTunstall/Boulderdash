@@ -1,0 +1,351 @@
+<HTML>
+<HEAD><TITLE>BoulderDash sounds</TITLE></HEAD>
+<BODY>
+<H1>BoulderDash sounds</H1>
+Inside this document:<BR>
+<UL><LI><A HREF="#Precedence of sounds">Precedence of sounds</A>
+<LI><A HREF="#Theme tune">Theme tune</A>
+<LI><A HREF="#Short sounds data">Short sounds data</A>
+<LI><A HREF="#SID/MIDI/Hertz conversion table">SID/MIDI/Hertz conversion table</A></UL>
+
+
+<HR>
+<H2><A NAME="Precedence of sounds">Precedence of sounds</A></H2>
+Since the C64 has only three "voices", it can play a maximum of three different sounds concurrently. Here are the rules for deciding which sounds get played: 
+
+<UL><LI>Voice 3: <A HREF="#Crack sound">Crack sound</A> gets highest priority, followed by <A HREF="#Amoeba sound">amoeba sound</A>, followed by <A HREF="#Magic wall sound">magic wall sound</A>.
+<LI>Voice 2: Used for the sound of <A HREF="#Rockford moving sound">Rockford moving</A>.
+<LI>Voice 1: Used for all other <A HREF="#Short sounds data">short sounds</A>. Last in, first served. In other words, the last object in the scan that requested a sound (if any) is the one that gets played. Once requested, the sound gets played to completion; any other requests that come in while that sound is playing are ignored.</UL>
+
+
+<HR>
+<H2><A NAME="Theme tune">Theme tune</A></H2>
+This is the sound data used to play the theme tune (when the title screen is up). The first byte of each pair indicates the frequency of the note to play on voice 2, the second byte is for voice 1. The numbers are array indicies into a <A HREF="#SID/MIDI/Hertz conversion table">MIDI-to-SID conversion array</A>.<P>
+
+The theme tune is 128 notes long&#59; each note is the same duration. The tune repeats infinitely, with no break between the end of the tune and restarting it from the top.
+
+<PRE>5FE8 [  0]  16 22
+     [  1]  1D 26
+     [  2]  22 29
+     [  3]  25 2E
+     [  4]  14 24
+     [  5]  1F 27
+     [  6]  20 29
+     [  7]  27 30 
+5FF8 [  8]  12 2A
+     [  9]  12 2C
+     [ 10]  1E 2E
+     [ 11]  12 31
+     [ 12]  20 2C
+     [ 13]  33 37
+     [ 14]  21 2D
+     [ 15]  31 35 
+6008 [ 16]  16 22
+     [ 17]  16 2E
+     [ 18]  16 1D
+     [ 19]  16 24
+     [ 20]  14 20
+     [ 21]  14 30
+     [ 22]  14 24
+     [ 23]  14 20 
+6018 [ 24]  16 22
+     [ 25]  16 2E
+     [ 26]  16 1D
+     [ 27]  16 24
+     [ 28]  1E 2A
+     [ 29]  1E 3A
+     [ 30]  1E 2E
+     [ 31]  1E 2A 
+6028 [ 32]  14 2C
+     [ 33]  14 2C
+     [ 34]  14 1B
+     [ 35]  14 22
+     [ 36]  1C 28
+     [ 37]  1C 38
+     [ 38]  1C 2C
+     [ 39]  1C 28 
+6038 [ 40]  11 1D
+     [ 41]  29 2D
+     [ 42]  11 1F
+     [ 43]  29 2E
+     [ 44]  0F 27
+     [ 45]  0F 27
+     [ 46]  16 33
+     [ 47]  16 27 
+6048 [ 48]  16 2E
+     [ 49]  16 2E
+     [ 50]  16 2E
+     [ 51]  16 2E
+     [ 52]  22 2E
+     [ 53]  22 2E
+     [ 54]  16 2E
+     [ 55]  16 2E 
+6058 [ 56]  14 2E
+     [ 57]  14 2E
+     [ 58]  14 2E
+     [ 59]  14 2E
+     [ 60]  20 2E
+     [ 61]  20 2E
+     [ 62]  14 2E
+     [ 63]  14 2E 
+6068 [ 64]  16 2E
+     [ 65]  32 2E
+     [ 66]  16 2E
+     [ 67]  33 2E
+     [ 68]  22 2E
+     [ 69]  32 2E
+     [ 70]  16 2E
+     [ 71]  33 2E 
+6078 [ 72]  14 2E
+     [ 73]  32 2E
+     [ 74]  14 2E
+     [ 75]  33 2E
+     [ 76]  20 2C
+     [ 77]  30 2C
+     [ 78]  14 2C
+     [ 79]  31 2C 
+6088 [ 80]  16 2E
+     [ 81]  16 3A
+     [ 82]  16 2E
+     [ 83]  35 38
+     [ 84]  22 2E
+     [ 85]  22 37
+     [ 86]  16 2E
+     [ 87]  31 35 
+6098 [ 88]  14 2C
+     [ 89]  14 38
+     [ 90]  14 2C
+     [ 91]  14 38
+     [ 92]  20 2C
+     [ 93]  20 33
+     [ 94]  14 2C
+     [ 95]  14 38 
+60A8 [ 96]  16 2E
+     [ 97]  32 2E
+     [ 98]  16 2E
+     [ 99]  33 2E
+     [100]  22 2E
+     [101]  32 2E
+     [102]  16 2E
+     [103]  33 2E 
+60B8 [104]  14 2E
+     [105]  32 2E
+     [106]  14 2E
+     [107]  33 2E
+     [108]  20 2C
+     [109]  30 2C
+     [110]  14 2C
+     [111]  31 2C 
+60C8 [112]  2E 32
+     [113]  29 2E
+     [114]  26 29
+     [115]  22 26
+     [116]  2C 30
+     [117]  27 2C
+     [118]  24 27
+     [119]  14 20 
+60D8 [120]  35 32
+     [121]  32 2E
+     [122]  2E 29
+     [123]  29 26
+     [124]  27 30
+     [125]  24 2C
+     [126]  20 27
+     [127]  14 20</PRE>
+
+
+<HR>
+<H2><A NAME="Short sounds data">Short sounds data</A></H2><UL>
+<LI><A HREF="#Explosion sound">Explosion sound</A>
+<LI><A HREF="#Diamond sound">Diamond sound</A>
+<LI><A HREF="#Picked up diamond sound">Picked up diamond sound</A>
+<LI><A HREF="#Boulder sound">Boulder sound</A>
+<LI><A HREF="#Crack sound">Crack sound</A>
+<LI><A HREF="#Running out of time sound">Running out of time sound</A>
+<LI><A HREF="#Uncover sound">Uncover sound</A>
+<LI><A HREF="#Amoeba sound">Amoeba sound</A>
+<LI><A HREF="#Magic wall sound">Magic wall sound</A>
+<LI><A HREF="#Bonus points sound">Bonus points sound</A>
+<LI><A HREF="#Rockford moving sound">Rockford moving sound</A></UL>
+
+<H3><A NAME="Explosion sound">Explosion sound</A></H3>
+Here's the SID data for the sound played when an object explodes (regardless of whether it's exploding to space or to diamonds):
+<UL><LI>Frequency: $1432 = 5170 (315.2 Hz)
+<LI>Waveform: White noise, start attacking
+<LI>Attack: 8 ms
+<LI>Decay: 2.4 s
+<LI>Sustain: volume 0
+<LI>Release: 6 ms</UL>
+
+<H3><A NAME="Diamond sound">Diamond sound</A></H3>
+Here's the SID data for the sound played when a <EM>boulder</EM> hits a magic wall, or a diamond starts or stops falling. 
+<UL><LI>Frequency: %1xxx x110 xxxx xxxx (where x = randomly determined) (ie random number between $8600 (2091.5 Hz) and $FEFF (3980 Hz).)
+<LI>Waveform: Triangle, start attacking
+<LI>Attack: 2 ms
+<LI>Decay: 6 ms
+<LI>Sustain: volume 10
+<LI>Release: 6 ms</UL>
+
+<H3><A NAME="Picked up diamond sound">Picked up Diamond sound</A></H3>
+Here's the SID data for the sound played when Rockford collects a diamond.
+<UL><LI>Frequency: $1478 = 5240 (319.5 Hz)
+<LI>Waveform: Triangle, start attacking
+<LI>Attack: 2 ms
+<LI>Decay: 6 ms
+<LI>Sustain: volume 15
+<LI>Release: 6 ms</UL>
+
+<H3><A NAME="Boulder sound">Boulder sound</A></H3>
+Here's the SID data for the sound played when a <EM>diamond</EM> hits a magic wall, a boulder is pushed, or a boulder starts or stops falling. 
+<UL><LI>Frequency: $0932 = 2354 (143.5 Hz)
+<LI>Waveform: White noise, start attacking
+<LI>Attack: 2 ms
+<LI>Decay: 6 ms
+<LI>Sustain: volume 15
+<LI>Release: 6 ms</UL>
+
+<H3><A NAME="Crack sound">Crack sound</A></H3>
+Here's the SID data for the sound played when a the inbox stops flashing and morphs into a pre-Rockford (ie Rockford is born), and when the pre-outbox morphs into a flashing outbox (ie when Rockford has collected enough diamonds).
+<UL><LI>Frequency: $2F32 = 12082 (736.6 Hz)
+<LI>Waveform: White noise, start attacking
+<LI>Attack: 8 ms
+<LI>Decay: 750 ms
+<LI>Sustain: volume 0
+<LI>Release: 24 ms</UL>
+
+<H3><A NAME="Running out of time sound">Running out of time sound</A></H3>
+Here's the SID data for the sound played when time is running out. Note that this sound overrides all other sounds; you can't hear Rockford moving or explosions or anything other than these pings during the last 10 seconds.
+<UL><LI>Frequency:
+	<UL><LI>9 seconds left: $1E00 = 7680 (468.2 Hz)
+	<LI>8 seconds left: $1F00 = 7936 (483.9 Hz)
+	<LI>7 seconds left: $2000 = 8192 (499.5 Hz)
+	<LI>6 seconds left: $2100 = 8448 (515.1 Hz)
+	<LI>5 seconds left: $2200 = 8704 (530.7 Hz)
+	<LI>4 seconds left: $2300 = 8960 (546.3 Hz)
+	<LI>3 seconds left: $2400 = 9216 (561.9 Hz)
+	<LI>2 seconds left: $2500 = 9472 (577.5 Hz)
+	<LI>1 seconds left: $2600 = 9728 (593.1 Hz)
+	<LI>0 seconds left: $2700 = 9984 (608.7 Hz)</UL>
+<LI>Waveform: Triangle, start attacking
+<LI>Attack: 2 ms
+<LI>Decay: 1.5 s
+<LI>Sustain: volume 0
+<LI>Release: 6 ms</UL>
+
+<H3><A NAME="Uncover sound">Uncover sound</A></H3>
+Here's the SID data for the sound played while the cave is being randomly uncovered (at the start of a cave) or covered (at the end of a cave).
+<UL><LI>Frequency: Random between $6400 = 25600 (1560.8 Hz) and $E300 = 58112 (3543.1 Hz)
+<LI>Waveform: Triangle, start attacking
+<LI>Attack: 2 ms
+<LI>Decay: 168 ms
+<LI>Sustain: volume ?
+<LI>Release: ? ms</UL>
+
+<H3><A NAME="Amoeba sound">Amoeba sound</A></H3>
+While amoeba exists, it continuously makes a sound. Note, however, that amoeba does <EM>not</EM> begin making sound until Rockford is "born"; that is, while the in box is still flashing or is morphing through the pre-Rockford stages, you can't hear the amoeba.
+<UL><LI>Frequency: Random between $0800 = 2048 (124.9 Hz) and $0F00 = 3840 (234.1 Hz)
+<LI>Waveform: Triangle, start attacking
+<LI>Attack: 24 ms
+<LI>Decay: 6 ms
+<LI>Sustain: volume ?
+<LI>Release: ? ms</UL>
+
+<H3><A NAME="Magic wall sound">Magic wall sound</A></H3>
+While magic wall is "turned on", it continuously makes a sound.
+<UL><LI>Frequency: %100x x11x 0000 0000 (where x is random) (ie between $8600 = 34304 (2091.5 Hz) and $9F00 = 40704 (2481.7 Hz))
+<LI>Waveform: Triangle, start attacking
+<LI>Attack: 2 ms
+<LI>Decay: 6 ms
+<LI>Sustain: volume 10
+<LI>Release: 6 ms</UL>
+
+<H3><A NAME="Bonus points sound">Bonus points sound</A></H3>
+When Rockford has completed a cave, every cave second left on the clock is worth 1 to 5 points (rises with difficulty level) and these are added to the player's score, and a sound is played at the same time. Note that for the last 10 seconds, the "running out of time" sound is still played, at higher speed than normal.<P>
+The sound is approximately described by the following code; basically the frequency decreases with time. Note that if the player finishes with 208 seconds or more remaining, the sound will "wrap around" from its low pitch back to a high pitch again.
+<PRE>z = $D0 
+for y = caveSecondsRemaining downto 0 {
+	z--&#59;
+	for x = 15 downto 1 {
+		frequency = (z - (x*2)) * 256
+		play note for 1 ms
+	} 
+}</PRE>
+<UL><LI>Frequency: see above
+<LI>Waveform: Triangle, start attacking
+<LI>Attack: 2 ms
+<LI>Decay: 6 ms
+<LI>Sustain: volume 10
+<LI>Release: 6 ms</UL>
+
+<H3><A NAME="Rockford moving sound">Rockford moving sound</A></H3>
+Every time Rockford moves, he makes a sound. The sound is different depending on whether he is moving into space or dirt.
+<UL><LI>Frequency:
+	<UL><LI>Moving through space: $3500 = 13568 (827.2 Hz)
+	<LI>Moving through dirt: $A500 = 42240 (2575.6 Hz)</UL>
+<LI>Waveform: White noise, start attacking
+<LI>Attack: 24 ms
+<LI>Decay: 6 ms
+<LI>Sustain: volume 12
+<LI>Release: 6 ms</UL>
+
+
+<HR>
+<H2><A NAME="SID/MIDI/Hertz conversion table">SID/MIDI/Hertz conversion table</A></H2>
+Note: To convert SID values to hertz, multiply by (1,022,900/16,777,216)
+<PRE>Item  Hex   Decimal     Hz     MIDI 
+---- -----   -----   --------  ---- 
+[0A] $02DC =   732    44.6 Hz   29 
+[0B] $030A =   778    47.4 Hz   30 
+[0C] $033A =   826    50.4 Hz   31 
+[0D] $036C =   876    53.4 Hz   32 
+[0E] $03A0 =   928    56.6 Hz   33 
+[0F] $03D2 =   978    59.6 Hz   34 
+[10] $0412 =  1042    63.5 Hz   35 
+[11] $044C =  1100    67.1 Hz   36 
+[12] $0492 =  1170    71.3 Hz   37 
+[13] $04D6 =  1238    75.5 Hz   38 
+[14] $0520 =  1312    80.0 Hz   39 
+[15] $056E =  1390    84.7 Hz   40 
+[16] $05B8 =  1464    89.3 Hz   41 
+[17] $0614 =  1556    94.9 Hz   42 
+[18] $0674 =  1652   100.7 Hz   43 
+[19] $06D8 =  1752   106.8 Hz   44 
+[1A] $0740 =  1856   113.2 Hz   45 
+[1B] $07A4 =  1956   119.3 Hz   46 
+[1C] $0824 =  2084   127.1 Hz   47 
+[1D] $0898 =  2200   134.1 Hz   48 
+[1E] $0924 =  2340   142.7 Hz   49 
+[1F] $09AC =  2476   151.0 Hz   50 
+[20] $0A40 =  2624   160.0 Hz   51 
+[21] $0ADC =  2780   169.5 Hz   52 
+[22] $0B70 =  2928   178.5 Hz   53 
+[23] $0C28 =  3112   189.7 Hz   54 
+[24] $0CE8 =  3304   201.4 Hz   55 
+[25] $0DB0 =  3504   213.6 Hz   56 
+[26] $0E80 =  3712   226.3 Hz   57 
+[27] $0F48 =  3912   238.5 Hz   58 
+[28] $1048 =  4168   254.1 Hz   59 
+[29] $1130 =  4400   268.3 Hz   60 
+[2A] $1248 =  4680   285.3 Hz   61 
+[2B] $1358 =  4952   301.9 Hz   62 
+[2C] $1480 =  5248   320.0 Hz   63 
+[2D] $15B8 =  5560   339.0 Hz   64 
+[2E] $16E0 =  5856   357.0 Hz   65 
+[2F] $1850 =  6224   379.5 Hz   66 
+[30] $19D0 =  6608   402.9 Hz   67 
+[31] $1B60 =  7008   427.3 Hz   68 
+[32] $1D00 =  7424   452.6 Hz   69 
+[33] $1E90 =  7824   477.0 Hz   70 
+[34] $2090 =  8336   508.2 Hz   71 
+[35] $2260 =  8800   536.5 Hz   72 
+[36] $2490 =  9360   570.7 Hz   73 
+[37] $26B0 =  9904   603.8 Hz   74 
+[38] $2900 = 10496   639.9 Hz   75 
+[39] $2B70 = 11120   678.0 Hz   76 
+[3A] $2DC0 = 11712   714.1 Hz   77</PRE>
+
+
+<HR>
+<ADDRESS>Web page design by <A HREF="mailto:peterb@perth.dialix.oz.au">Peter Broadribb &lt;peterb@perth.dialix.oz.au&gt;</A></ADDRESS>
+</BODY>
+</HTML>

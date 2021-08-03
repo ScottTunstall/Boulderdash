@@ -1,0 +1,41 @@
+# CaveToMap v2.50
+name 007_CAV
+width 40
+height 22
+mapstart
+WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW
+WPW WFw               wwwwwwww         W
+W W W w w.xww  wwwwww w Fw  Fw  Qwwwww W
+W     wcw ddw  w    Q w.xw.xww   w   w W
+W     w wdddw  w   WWWw    wFw      dw W
+W   F w wwwww  w      wQW  . w   wwwww W
+Ww.xwww  w  .  w   ww.w W  www   w   w W
+Ww       wF w  w   wd www  . wQQ w   w W
+Wwwwwwww wwww Qw   wddw    wFw       w W
+W              w.x.wwww wwwwww   wwwww W
+W  rrr w wwww      Q                 w W
+Wwwwwwww .c w  wwwwww rrwww ww   w   w W
+W        w dw  wW  .  wWW    w   w   w W
+W        wwww  www wW w   w Ww   w   w W
+W              wd  wW wd  w Ww   wwwww W
+Wwwwww         wwwwwwwww.wwwww         W
+WQQQQww...www               Q    www.wwW
+WQQQQQQ...QQQwwwwwwww wwwwwx.w   w    wW
+WQQQQQWWXWWQQQQQww    wdddwF w   wFWFWwW
+WQQQQQWWWWWQQQQQQw    wddd.  w   wFWFWwW
+WQQQQQQQQQQQQQQQQw    wwwwwwww   wwwwwwW
+WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW
+mapend
+delay 25
+time 255
+require 7
+dpoints 1
+dextra 99
+permeable 9
+amrate1 1
+milltime 999
+colour1 0
+colour2 0
+colour3 8
+colour4 9
+colour5 3

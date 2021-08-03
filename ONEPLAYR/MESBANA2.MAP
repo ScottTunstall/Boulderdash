@@ -1,0 +1,41 @@
+# CaveToMap v2.50
+name MESBANA2
+width 40
+height 22
+mapstart
+WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW
+W.a.a.a.w.a.w.d.r.a..a.a.a.a.a.a.......W
+W......................................W
+W.a.a.a.c.m.W.m.F.a..a.a.a.a.a.a.......W
+W......................................W
+W.a.a.a.x.W.Q...x.a..a.a.a.a.a.a.......W
+W......................................W
+W.a.a.a.d...c.a.H.a.a.a..a.a.a.a.......W
+W......................................W
+W.a.a.a.Q.F.P. .Q.a.a.a..a.a.a.a.......W
+W......................................W
+W.a.a.a.a.a.a.a.a.a.a.rr.a.a.a.a.......W
+W......................................W
+W......................................W
+W......................................W
+W......................................W
+W......................................W
+W......................................W
+W......................................W
+W......................................W
+W......................................W
+WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW
+mapend
+delay 0
+time 0
+require 0
+dpoints 0
+dextra 0
+permeable 9
+amrate1 1
+milltime 999
+colour1 0
+colour2 0
+colour3 8
+colour4 9
+colour5 3

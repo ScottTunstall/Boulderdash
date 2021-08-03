@@ -1,0 +1,45 @@
+# Boulderoid v1.15
+author David J?
+name TRY_IT_C
+width 40
+height 22
+mapstart
+WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW
+W                                      W
+W                                      W
+W                                      W
+W             ww                       W
+W    w       wPHw                      W
+W    wwwwwwwww.w                       W
+W    wddwFFw w Fw                      W
+W    wdd.  . . Ww                      W
+W    wddwFFw www                 W     W
+W    wwwwwww.w                  W.W    W
+W    w w     w     W  rr      WWWWWW   W
+W      w     w    WwW        WWdddddW  W
+WWW    w     w   WwwwW   WWWW WdddddWWWW
+W.W  Wwww   www WwwwwwWWW     WdddddW  W
+W.WWW.WWWW.WWWWWw   ww    www WWW.WWW  W
+Wwwwwww       wwx.x.ww wwwx..          W
+Wwdddd.       .   w  . .....x.x.....x. W
+WwddddwF .    wwx.x.ww wx.x...xwx.x.xw W
+Wwddddww...w  www w ww ...x.x.x...x... W
+Wwwwwww....w Fwdd   wwQ        Q     Q W
+WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW
+mapend
+delay 25
+time 255
+require 35
+dpoints 5
+dextra 90
+permeable 9
+amrate1 1
+amoeba 23
+milltime 999
+colour1 0
+colour2 0
+colour3 8
+colour4 9
+colour5 3
+timepercent 100
+teleport 1234567890,YYYYYYYYYY,NNNNNNNNNN

@@ -1,0 +1,41 @@
+# CaveToMap v2.50
+name DDT1_GAM
+width 40
+height 22
+mapstart
+wwmPWwWdxFdcWHWcWHWHWxWWwdmPWwWdxFmrdcWc
+mPWwWdxFmrmrmrmrmrmrmrdcWWW xWwdmPWwWdxF
+mrmrmrmrdcWWW xWwmmPWcWPxWmrmrmrmrdcWXWx
+WWWxWHxWWcWWmPWwWdxFdcxmW WXWdxmxWWcWWmP
+WwWdxFdcxwWHW xWxWmPWwWdxFmrmrmrdcWdxWWd
+xWmPWwWdxFmrmrmrmrdcWFWxWHWmWdWPWdwdmPWw
+WdxFdcxwxWWdxmx.WdxmxwmPWwWdxFdcwrwrw.mP
+WwWdxFmrmrmrmrmrdcWHWdWmxcxmWcWPxWmPWcWP
+xWdcxaW xmxaW WPmPWwWdxFmrmrdcW.xmxxxFWd
+WPmPWwWdxFmrmrdcxrWQWcWHWcxrmPWwWdxFmrmr
+dcWXWxxwWmWdWPWdmPWwWdxFmrrPwxwdwxmPWcWP
+xWmrmrmrmrmrdcwxwdwWmPrrWPxWmrmrmrmrmrdc
+wxwdwWmPWcWPxWmrmrmrmrmrdcwxwdwxmPWcWPxW
+mrmrmrmrmrdcwxwdwxmPWcWPxWmrmrmrmrmrdcwx
+wdwxmPWcWPxWmrmrmrmrmrdcwxwdwxmPWcWPxWmr
+mrmrmrmrdcwxwdwxmPWcWPxWmrmrmrmrmrdcwxwd
+wFmPWcWPxWmrmrmrmrmrdcwxwdwrmPWcWPxWmrmr
+mrmrmrdcwxwdwrmPWcWPxWmrmrmrmrmrdcwxwdwr
+mPWcWPxWmrmrmrmrmrdcwxwdwdmPWcWPxWmrmrmr
+mrmrdcwxwdwdmPWcWPxWmrmrmrmrmrdcwxwdwdmP
+WcWPxWmrmrmrmrmrdcwxwdwdmPWcWPxWmrmrmrmr
+WXWxxwWmWdWPWdmPWwWdxFmrdcWXWxxwWmWdWPWd
+mapend
+delay 160
+time 53
+require 49
+dpoints 73
+dextra 84
+permeable -23
+amrate1 88
+milltime 25
+colour1 0
+colour2 0
+colour3 0
+colour4 5
+colour5 1

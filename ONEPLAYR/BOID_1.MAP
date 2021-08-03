@@ -1,0 +1,45 @@
+# Boulderoid v1.15
+author David Hansson
+name Boulderoid I
+width 40
+height 22
+mapstart
+WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW
+WP.rwddddW1.rW3  W5.rcW................W
+W...wddddWa..W.V Wx.. W................W
+W...wddddW...W...Wr.. W................W
+W...wddddW...W..dW... W................W
+W...wfdddWqr.W...W... W................W
+WwwTwwwwwW...W.d.W    W................W
+W...AAAAAW...W.d.Wb   W................W
+W...AAAAAWr..W...WTTTTW................W
+Wr..AAAAAW..qW...W.....................W
+Wr..AAAAAW...W...W.....................W
+W...AAAAAW   Wd..W.....................W
+W........W   Wd..W.....................W
+W       BW   Wdd.W.....................W
+ TWrrrrWWW  OWd..W.....................W
+ ..rrrr..W...W...W.....................W
+ ..rrrr.dW..rW.d.W.....................W
+ ........W...W...W.....................W
+ ..mmmmW.Wr..W...W.....................X
+ ..    W.W...W...W.....................W
+ ..b b W0W..2W.4.W.....................W
+ fW    WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW
+mapend
+delay 20
+time 100
+require 20
+dpoints 5
+dextra 10
+permeable 90
+amrate1 100
+amoeba 23
+milltime 10
+colour1 0
+colour2 0
+colour3 9
+colour4 11
+colour5 1
+timepercent 100
+teleport 1234567890,YNYYYYYYYY,YNYNYNNNNN

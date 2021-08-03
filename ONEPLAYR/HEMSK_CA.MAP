@@ -1,0 +1,45 @@
+# Boulderoid v1.15
+author 
+name HEMSK_CA
+width 40
+height 22
+mapstart
+WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW
+W......................................W
+W...wwww..........wwww.................W
+W...wddwwwwwwwwwwwwddw.................W
+W...wddw         Pwddw.................W
+W...ww.w        WWw.ww.................W
+W....w    WW.WW w w w..................W
+W....w    WaaaW w w w..................W
+W....w    WaaaW . . w..................W
+W....w    WW.WW w w w..................W
+W....w          wQw w..................W
+W....w wwww.wwwww w w..................W
+W...ww.wW w w Xww w.ww.................W
+W...wddwF . . Fww wddw.................W
+W...wddwwwwwwwwwwwwddw.................W
+W...wwww..........wwww.................W
+W......................................W
+W......................................W
+W......................................W
+W......................................W
+W......................................W
+WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW
+mapend
+delay 25
+time 50
+require 16
+dpoints 2
+dextra 98
+permeable 4
+amrate1 1
+amoeba 23
+milltime 255
+colour1 0
+colour2 0
+colour3 0
+colour4 0
+colour5 6
+timepercent 100
+teleport 1234567890,YYYYYYYYYY,NNNNNNNNNN

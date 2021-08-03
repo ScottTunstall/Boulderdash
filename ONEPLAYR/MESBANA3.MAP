@@ -1,0 +1,45 @@
+# Boulderoid v1.15
+author David J?
+name MESBANA3
+width 40
+height 22
+mapstart
+WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW
+WPw..r  ..ww.......................w...W
+W.w.www w.ww.....................w.....W
+W...www wQww...........................W
+Wwwwwww wwww...........................W
+W         Qwwwwwwww....................W
+Wwwwwwwwwwww     .w...............w....W
+W.d............. .w..........w.........W
+W.w.............HWw.....w..............W
+W.w..c...c...c..WWw....................W
+W.w...............w....................W
+W.w...............w...rr.............w.W
+Waw..c...c...c....w...w................W
+Www...............w....................W
+WQQQwwwwwww.wwwwwww....................W
+Wwwwww           w.....................W
+W      w ww wwww w.....................W
+W ww w w w       w.w...................W
+W     Qw w www wQw.....................W
+W w wwww www w www.w...w...............W
+W                 .....................W
+WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW
+mapend
+delay 25
+time 250
+require 10
+dpoints 1
+dextra 99
+permeable 1
+amrate1 1
+amoeba 23
+milltime 999
+colour1 0
+colour2 0
+colour3 9
+colour4 9
+colour5 3
+timepercent 100
+teleport 1234567890,YYYYYYYYYY,NNNNNNNNNN
